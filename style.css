@@ -1,28 +1,25 @@
-/* ===== カラー設定 ===== */
+/* ===== カラー ===== */
 :root{
 --main:#1f4d4f;
 --accent:#c6a86a;
---bg:#f7f9f9;
---text:#333;
 }
 
-/* ===== リセット（最重要） ===== */
+/* ===== リセット ===== */
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
 }
 
-html, body{
-  margin:0;
-  overflow-x:hidden; /* ←右の余白対策 */
-}
-
-/* ===== 全体 ===== */
-body{
+html,body{
+margin:0;
+overflow-x:hidden;
 font-family:'Noto Sans JP',sans-serif;
 color:#333;
-line-height:1.9;
+line-height:1.8;
+}
 
-background-image:
+/* ===== 背景 ===== */
+body{
+background:
 linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
 url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
 background-size:cover;
@@ -35,10 +32,9 @@ header{
 text-align:center;
 }
 
-/* ===== トップ動画 ===== */
+/* ===== 動画 ===== */
 .hero{
 position:relative;
-width:100%;
 height:60vh;
 overflow:hidden;
 }
@@ -49,7 +45,6 @@ height:100%;
 object-fit:cover;
 }
 
-/* 暗くする */
 .hero::after{
 content:"";
 position:absolute;
@@ -57,88 +52,89 @@ inset:0;
 background:rgba(0,0,0,0.3);
 }
 
-/* テキスト */
 .hero p{
 position:absolute;
-bottom:20px;
+bottom:80px;
 left:20px;
 color:#fff;
 font-size:18px;
 z-index:2;
 }
 
-/* ===== 店名 ===== */
+.hero-btn{
+position:absolute;
+bottom:30px;
+left:20px;
+background:var(--accent);
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+z-index:2;
+}
+
+/* ===== タイトル ===== */
 header h1{
-margin-top:30px;
 font-family:'Playfair Display',serif;
 font-size:36px;
 color:var(--main);
+margin-top:20px;
 }
 
 .sub{
-font-size:14px;
-letter-spacing:2px;
+font-size:12px;
 color:#777;
-}
-
-header p{
-color:#666;
-font-size:16px;
 }
 
 /* ===== ナビ ===== */
 nav{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 gap:10px;
-padding:20px;
+padding:15px;
 background:white;
 }
 
 nav a{
-text-decoration:none;
-font-size:14px;
 padding:10px 15px;
-border-radius:30px;
 background:#f2f6f6;
+border-radius:30px;
+text-decoration:none;
 color:#333;
+font-size:14px;
 }
 
 /* ===== セクション ===== */
 section{
-padding:60px 15px;
 max-width:900px;
 margin:auto;
+padding:60px 15px;
 }
 
-/* ===== 見出し ===== */
 h2{
-font-family:'Playfair Display',serif;
-font-size:28px;
 text-align:center;
 color:var(--main);
 margin-bottom:30px;
 }
 
 /* ===== SERVICE / ABOUT ===== */
-#about, #point{
+#about,#point{
 display:flex;
 gap:20px;
-align-items:center;
 flex-wrap:wrap;
 background:white;
-border-radius:20px;
-padding:30px;
-margin-bottom:40px;
-}
-
-#about img, #point img{
-width:48%;
+padding:25px;
 border-radius:15px;
+margin-bottom:30px;
 }
 
-#about p, #point p{
+#about img,#point img{
+width:48%;
+border-radius:10px;
+}
+
+#about p,#point p{
 width:48%;
 }
 
@@ -157,19 +153,13 @@ border-radius:10px;
 }
 
 /* ===== ボタン ===== */
-.reserve-center{
-text-align:center;
-margin-top:20px;
-}
-
 .reserve-btn{
-background:linear-gradient(135deg,var(--accent),#b7944e);
+display:inline-block;
+background:var(--accent);
 color:white;
-border:none;
-padding:16px 40px;
-border-radius:40px;
-font-size:16px;
-cursor:pointer;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
 }
 
 /* ===== Instagram ===== */
@@ -178,12 +168,33 @@ text-align:center;
 }
 
 .insta-btn{
-display:inline-block;
 background:#E1306C;
 color:white;
 padding:12px 25px;
 border-radius:30px;
 text-decoration:none;
+}
+
+/* ===== STAFF（プロ仕様） ===== */
+#staff{
+text-align:center;
+background:white;
+padding:30px;
+border-radius:15px;
+}
+
+.spa-card img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+margin-bottom:15px;
+}
+
+.staff-card{
+max-width:400px;
+margin:auto;
 }
 
 /* ===== MAP ===== */
@@ -192,11 +203,6 @@ width:100%;
 height:300px;
 border:0;
 border-radius:10px;
-}
-
-.address{
-text-align:center;
-font-size:14px;
 }
 
 /* ===== フッター ===== */
@@ -213,7 +219,7 @@ position:fixed;
 bottom:20px;
 left:50%;
 transform:translateX(-50%);
-background:#c6a86a;
+background:var(--accent);
 color:white;
 padding:14px 30px;
 border-radius:30px;
@@ -237,17 +243,22 @@ width:100%;
 text-align:center;
 }
 
-#about, #point{
+#about,#point{
 flex-direction:column;
 }
 
-#about img, #point img,
-#about p, #point p{
+#about img,#point img,
+#about p,#point p{
 width:100%;
 }
 
 .gallery{
 grid-template-columns:1fr 1fr;
+}
+
+.spa-card img{
+width:160px;
+height:160px;
 }
 
 }
