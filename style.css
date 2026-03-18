@@ -23,9 +23,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
-  margin: 0;
-  padding: 0;
 }
 
 /* ===== ヒーロー ===== */
@@ -130,7 +127,7 @@ section {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.45); /* 透過度少し上げて文字読みやすく */
+  background: rgba(255, 255, 255, 0.45); /* 透過度調整 */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -139,7 +136,6 @@ section {
   text-align: center;
 }
 
-/* タイトル・テキスト */
 section h2 {
   color: #8c6b3f;
   margin-bottom: 15px;
@@ -151,15 +147,18 @@ section li {
   line-height: 1.7;
 }
 
-/* ===== 箇条書き修正 ===== */
-ul {
-  list-style: none; /* デフォルトの・を消す */
-  padding-left: 0;
-  margin-top: 10px;
+/* ===== ul/li の修正（◆だけ表示、左寄せ） ===== */
+section ul {
+  list-style: none;      /* 「・」を消す */
+  padding-left: 0;       /* 左余白削除 */
+  margin: 10px 0;        /* 上下マージン調整 */
+  text-align: left;      /* 左寄せ */
 }
 
-ul li {
-  margin-bottom: 10px; /* 行間調整 */
+section ul li {
+  margin-bottom: 10px;
+  padding-left: 0;
+  display: list-item;
 }
 
 /* ===== ABOUT画像 ===== */
@@ -292,7 +291,6 @@ footer {
     line-height: 1.5;
   }
 
-  /* ABOUT画像縦並び */
   .about-images {
     flex-direction: column;
     gap: 15px;
@@ -303,18 +301,15 @@ footer {
     height: auto;
   }
 
-  /* GALLERYスマホ2列 */
   .gallery {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* STAFF写真縮小 */
   #staff .spa-card img {
     width: 140px;
     height: 140px;
   }
 
-  /* Instagramボタン幅いっぱい */
   #instagram .insta-btn {
     width: 100%;
     padding: 20px 0;
