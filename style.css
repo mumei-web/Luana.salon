@@ -262,3 +262,19 @@ height:160px;
 }
 
 }
+/* ===== STAFF 強制修正 ===== */
+#staff .spa-card img{
+  width:220px !important;
+  height:220px !important;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+  margin:0 auto 20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+#staff .staff-card{
+  max-width:400px;
+  margin:auto;
+  text-align:center;
+}
