@@ -90,11 +90,9 @@ nav{
   gap:10px;
   padding:15px;
   background: rgba(255,255,255,0.95);
-  position: absolute; /* 前面に表示 */
-  top:20px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:10;
+  position: relative; /* ここをabsoluteではなくrelativeに変更 */
+  z-index:5;
+  margin-top:10px;    /* 動画の下に表示 */
 }
 
 nav a{
@@ -140,7 +138,7 @@ section{
 
 .about-images img{
   flex: 1 1 48%;
-  height:260px;
+  aspect-ratio: 1/1;   /* 縦横比を1:1で統一 */
   object-fit:cover;
   border-radius:15px;
 }
@@ -264,6 +262,7 @@ footer{
   .about-images img{
     width:100%;
     height:auto;
+    aspect-ratio: auto; /* スマホは自然な比率 */
   }
 
   /* GALLERYスマホ2列 */
@@ -287,10 +286,5 @@ footer{
   nav a{
     font-size:13px;
     padding:8px 12px;
-  }
-
-  /* ナビもスマホ中央 */
-  nav{
-    top:10px;
   }
 }
