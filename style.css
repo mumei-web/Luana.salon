@@ -272,3 +272,9 @@ padding:16px;
 }
 
 }
+.gallery img{
+  width: 100%;
+  height: 200px;        /* ←高さ固定 */
+  object-fit: cover;    /* ←これが超重要 */
+  border-radius: 10px;
+}
