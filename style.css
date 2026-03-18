@@ -362,3 +362,79 @@ transform:translateX(-50%);
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
+/* ===== ABOUT 完全版 ===== */
+#point{
+  max-width:800px;
+  margin:auto;
+}
+
+.about-images{
+  display:flex;
+  gap:20px;
+}
+
+.about-images img{
+  width:50%;
+  height:260px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+/* スマホ */
+@media screen and (max-width:768px){
+  .about-images{
+    flex-direction:column;
+  }
+
+  .about-images img{
+    width:100%;
+    height:180px;
+  }
+}
+/* ===== ボタン調整 ===== */
+.reserve-btn{
+  background:linear-gradient(135deg,var(--accent),#b7944e);
+  color:white;
+  border:none;
+  padding:14px 30px;
+  border-radius:40px;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* スマホ */
+@media screen and (max-width:768px){
+  .reserve-btn{
+    width:auto;      /* ←これが重要 */
+    padding:14px 25px;
+  }
+}
+.reserve-center{
+  text-align:center;
+  margin:40px 0;
+}
+/* ===== 固定予約ボタン ===== */
+.fixed-reserve{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+
+  background:#c6a86a;
+  color:white;
+  padding:14px 30px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  z-index:999;
+}
+
+/* スマホ */
+@media screen and (max-width:768px){
+  .fixed-reserve{
+    width:auto;
+    padding:14px 25px;
+  }
+}
