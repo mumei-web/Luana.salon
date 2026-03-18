@@ -27,42 +27,36 @@ header{
 text-align:center;
 }
 
-/* ===== トップ動画 ===== */
-
+/* ===== トップ動画（修正版） ===== */
 .hero{
-  position:relative;
-  width:100%;
-  height:300px;
-  overflow:hidden;
+position:relative;
+width:100%;
+height:60vh;
+overflow:hidden;
 }
 
 .hero-video{
-  width:100%;
-  height:100%;
-  object-fit:cover; /* ←デザイン重視 */
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-/* 文字 */
-
-.coming-text{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  text-align:center;
-  color:white;
-  background:rgba(0,0,0,0.4);
-  padding:20px 30px;
-  border-radius:10px;
+/* 動画を少し暗く（見やすく） */
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.3);
 }
 
-.coming-text h2{
-  font-size:28px;
-  margin:0;
-}
-
-.coming-text p{
-  font-size:14px;
+/* テキストを上に重ねる */
+.hero p{
+position:absolute;
+bottom:20px;
+left:20px;
+color:#fff;
+font-size:18px;
+z-index:2;
 }
 
 /* ===== 店名 ===== */
@@ -166,6 +160,8 @@ gap:18px;
 
 .gallery img{
 width:100%;
+height:200px;
+object-fit:cover;
 border-radius:10px;
 }
 
@@ -245,15 +241,11 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 z-index:999;
 }
 
-/* ===== スマホ対応（最重要） ===== */
-@media screen and (max-width: 768px){
+/* ===== スマホ対応 ===== */
+@media screen and (max-width:768px){
 
-.hero-slider{
-height:220px;
-}
-
-.slide{
-height:220px;
+.hero{
+height:45vh;
 }
 
 header h1{
@@ -288,30 +280,4 @@ width:100%;
 padding:16px;
 }
 
-}
-.gallery img{
-  width: 100%;
-  height: 200px;        /* ←高さ固定 */
-  object-fit: cover;    /* ←これが超重要 */
-  border-radius: 10px;
-}
-@media screen and (max-width:768px){
-
-  .hero{
-    height:200px;
-  }
-
-  .coming-text h2{
-    font-size:20px;
-  }
-
-  .coming-text p{
-    font-size:12px;
-  }
-
-}
-.hero video {
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* ← これが重要 */
 }
