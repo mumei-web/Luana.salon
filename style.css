@@ -279,3 +279,8 @@ footer{
     padding:8px 12px;
   }
 }
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 24px;  /* スマホ用サイズ */
+    }
+}
