@@ -301,3 +301,38 @@ footer{
     height: auto;
   }
 }
+/* Instagramセクション全体 */
+#instagram {
+  max-width: 100%;
+  padding: 60px 15px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ボタンの調整 */
+#instagram .insta-btn {
+  display: block;          /* 幅いっぱいにする */
+  width: 90%;              /* PCでも余白あり */
+  max-width: 500px;        /* 幅の上限 */
+  margin: 0 auto;          /* 中央に配置 */
+  padding: 18px 0;         /* 上下の余白を十分に確保 */
+  font-size: 18px;         /* 文字サイズを大きめに */
+  line-height: 1.5;        /* 行間を確保 */
+  background: #E1306C;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  box-sizing: border-box;  /* パディング込みで幅調整 */
+  white-space: nowrap;     /* 文字が改行されず収まる */
+  overflow: hidden;        /* はみ出し防止 */
+  text-align: center;      /* 文字中央揃え */
+}
+
+/* スマホ用 */
+@media screen and (max-width: 768px) {
+  #instagram .insta-btn {
+    width: 100%;           /* スマホは幅いっぱい */
+    padding: 20px 0;       /* 上下余白を増やす */
+    font-size: 16px;       /* 文字サイズを少し小さく */
+  }
+}
