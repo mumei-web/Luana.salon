@@ -395,3 +395,22 @@ h1, h2 {
   margin-bottom: 20px;
   padding: 0;
 }
+/* ガラス風セクション */
+section {
+  background: rgba(255, 255, 255, 0.3); /* 半透明の白 */
+  backdrop-filter: blur(10px);          /* 背景をぼかす */
+  -webkit-backdrop-filter: blur(10px);  /* Safari対応 */
+  border-radius: 16px;                  /* 角を丸く */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* 薄い枠線 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);    /* 影で浮き上がる感じ */
+  padding: 20px;
+  margin: 20px 0;
+}
+h2 {
+  color: #8c6b3f; /* 海や背景と相性の良い茶系 */
+  margin-bottom: 15px;
+}
+
+p, li {
+  color: #333;
+}
