@@ -237,3 +237,51 @@ footer{
     height:140px;
   }
 }
+.palm-left,
+.palm-right {
+  display: none;
+}
+/* スマホ対応追加 */
+@media screen and (max-width:768px){
+  .hero{
+    height:50vh;
+  }
+  .hero-text h1{
+    font-size:22px;
+  }
+  .hero-text p{
+    font-size:14px;
+  }
+
+  /* ABOUT画像縦並びで自動高さ */
+  .about-images{
+    flex-direction:column;
+    gap:15px;
+  }
+  .about-images img{
+    width:100%;
+    height:auto;
+  }
+
+  /* SERVICE写真も自動高さ */
+  #about img{
+    width:100%;
+    height:auto;
+  }
+
+  /* GALLERYスマホ2列 */
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  /* STAFF写真縮小 */
+  #staff .spa-card img{
+    width:140px;
+    height:140px;
+  }
+
+  /* ヤシの木を非表示 */
+  .palm-left, .palm-right {
+    display: none;
+  }
+}
