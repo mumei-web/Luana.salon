@@ -82,17 +82,6 @@ body{
   background:#b59453;
 }
 
-/* ===== ヤシの木 ===== */
-.palm-left, .palm-right{
-  position:absolute;
-  bottom:0;
-  width:80px;
-  z-index:2;
-}
-
-.palm-left{ left:5%; }
-.palm-right{ right:5%; }
-
 /* ===== ナビ ===== */
 nav{
   display:flex;
@@ -100,7 +89,9 @@ nav{
   flex-wrap:wrap;
   gap:10px;
   padding:15px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
+  position: relative;
+  z-index:5;
 }
 
 nav a{
@@ -112,11 +103,17 @@ nav a{
   font-size:14px;
   border:1px solid #ddd;
   transition:0.3s;
+  display:inline-block;
 }
 
 nav a:hover{
   background:var(--accent);
   color:white;
+}
+
+/* ===== ヤシの木 ===== */
+.palm-left, .palm-right{
+  display:none; /* スマホでも非表示 */
 }
 
 /* ===== セクション共通 ===== */
@@ -135,13 +132,23 @@ section{
   display:flex;
   gap:20px;
   margin-bottom:20px;
+  flex-wrap: wrap;
 }
 
 .about-images img{
-  width:50%;
-  height:260px;
+  flex: 1 1 48%; /* 2枚で均等 */
+  height:260px;  /* 高さ統一 */
   object-fit:cover;
   border-radius:15px;
+}
+
+/* SERVICE画像 */
+#about img{
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px;
 }
 
 /* ===== GALLERY ===== */
@@ -191,12 +198,31 @@ section{
 }
 
 /* Instagram */
-.insta-btn{
-  background:#E1306C;
-  color:white;
-  padding:12px 25px;
+#instagram {
+  max-width:100%;
+  padding:60px 15px;
+  text-align:center;
+  box-sizing:border-box;
+}
+
+#instagram .insta-btn {
+  display:block;
+  width:90%;
+  max-width:500px;
+  margin:20px auto;
+  padding:22px 20px;
+  font-size:18px;
+  line-height:1.5;
+  white-space: normal;
+  text-align:center;
   border-radius:30px;
+  background:#E1306C;
+  color:#fff;
   text-decoration:none;
+}
+
+#instagram .insta-btn:hover{
+  opacity:0.9;
 }
 
 /* MAP */
@@ -226,45 +252,13 @@ footer{
   .hero-text p{
     font-size:14px;
   }
-  .about-images{
-    flex-direction:column;
-  }
-  .gallery{
-    grid-template-columns:1fr 1fr;
-  }
-  #staff .spa-card img{
-    width:140px;
-    height:140px;
-  }
-}
-.palm-left,
-.palm-right {
-  display: none;
-}
-/* スマホ対応追加 */
-@media screen and (max-width:768px){
-  .hero{
-    height:50vh;
-  }
-  .hero-text h1{
-    font-size:22px;
-  }
-  .hero-text p{
-    font-size:14px;
-  }
 
-  /* ABOUT画像縦並びで自動高さ */
+  /* ABOUT画像縦並び */
   .about-images{
     flex-direction:column;
     gap:15px;
   }
   .about-images img{
-    width:100%;
-    height:auto;
-  }
-
-  /* SERVICE写真も自動高さ */
-  #about img{
     width:100%;
     height:auto;
   }
@@ -280,59 +274,15 @@ footer{
     height:140px;
   }
 
-  /* ヤシの木を非表示 */
-  .palm-left, .palm-right {
-    display: none;
+  /* Instagramボタン幅いっぱい */
+  #instagram .insta-btn{
+    width:100%;
+    padding:20px 0;
+    font-size:16px;
   }
-}
-/* ABOUT画像を正方形に揃える */
-.about-images img {
-  width: 100%;           /* 親コンテナに合わせる */
-  aspect-ratio: 1 / 1;   /* 縦横比 1:1（正方形） */
-  object-fit: cover;     /* はみ出した部分は切る */
-  border-radius: 15px;
-}
 
-/* スマホ用：縦並びでも比率を維持 */
-@media screen and (max-width:768px){
-  .about-images img {
-    width: 100%;
-    aspect-ratio: auto; /* スマホは自然な比率に */
-    height: auto;
-  }
-}
-/* Instagramセクション全体 */
-#instagram {
-  max-width: 100%;
-  padding: 60px 15px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-/* ボタンの調整 */
-#instagram .insta-btn {
-  display: block;          /* 幅いっぱいにする */
-  width: 90%;              /* PCでも余白あり */
-  max-width: 500px;        /* 幅の上限 */
-  margin: 0 auto;          /* 中央に配置 */
-  padding: 18px 0;         /* 上下の余白を十分に確保 */
-  font-size: 18px;         /* 文字サイズを大きめに */
-  line-height: 1.5;        /* 行間を確保 */
-  background: #E1306C;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 30px;
-  box-sizing: border-box;  /* パディング込みで幅調整 */
-  white-space: nowrap;     /* 文字が改行されず収まる */
-  overflow: hidden;        /* はみ出し防止 */
-  text-align: center;      /* 文字中央揃え */
-}
-
-/* スマホ用 */
-@media screen and (max-width: 768px) {
-  #instagram .insta-btn {
-    width: 100%;           /* スマホは幅いっぱい */
-    padding: 20px 0;       /* 上下余白を増やす */
-    font-size: 16px;       /* 文字サイズを少し小さく */
+  nav a{
+    font-size:13px;
+    padding:8px 12px;
   }
 }
