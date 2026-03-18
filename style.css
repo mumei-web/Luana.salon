@@ -1,131 +1,120 @@
-:root{
-  --main:#1f4d4f;
-  --accent:#c6a86a;
-}
-
-*,
-*::before,
-*::after{
-  box-sizing:border-box;
-}
-html,body{
+body{
   margin:0;
   font-family:'Noto Sans JP',sans-serif;
   color:#333;
-  line-height:1.8;
+
+  /* トップページと同じ海・ハワイ風背景 */
+  background-image:
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  /* 少し白透過を上から重ねて文字を読みやすく */
+  background-blend-mode: lighten;
 }
 
-/* ===== ヒーロー ===== */
-.hero{
-  position:relative;
-  height:65vh;
-  overflow:hidden;
+/* タイトル */
+h1{
   text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  letter-spacing:6px;
+  margin:70px 0 50px;
+  color:#fff; /* 海の背景に合わせて白に */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
-/* 動画そのまま */
-.hero-video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:0;
+/* コンテナ */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
 
-/* 黒透明オーバーレイで文字を読みやすく */
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.35);
-  z-index:1;
-  pointer-events:none;
+/* セクション */
+.menu-section{
+  margin-bottom:50px;
+  padding:35px;
+  border-radius:16px;
+
+  /* 背景は薄い白で文字が読める */
+  background:rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border:1px solid rgba(255,255,255,0.4);
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* ヒーローテキスト */
-.hero-text{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  z-index:2;
-  color:#fff;
-  text-align:center;
-  max-width:600px;
+/* カテゴリー */
+.menu-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;
+  letter-spacing:3px;
+  margin-bottom:20px;
+  border-bottom:1px solid #e5d8c7;
+  padding-bottom:10px;
+  color:#8c6b3f;
 }
-.hero-text p{
+
+/* メニュー */
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 0;
+  border-bottom:1px solid #f0f0f0;
+}
+.menu-name{
   font-size:16px;
-  margin:5px 0;
 }
-.hero-text h1{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  margin:10px 0;
-  line-height:1.3;
-  text-shadow:2px 2px 6px rgba(0,0,0,0.7);
+.menu-price{
+  font-weight:bold;
+  letter-spacing:1px;
 }
 
-/* ヒーローボタン */
-.hero-btn{
-  display:inline-block;
-  margin-top:15px;
-  background:var(--accent);
-  color:white;
-  padding:12px 28px;
-  border-radius:30px;
+/* ナビゲーション */
+.main-nav{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:40px;
+}
+.main-nav a{
   text-decoration:none;
-  font-weight:600;
-  z-index:2;
+  padding:10px 22px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.7);
+  color:#8c6b3f;
+  font-weight:bold;
+  font-size:14px;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.6);
+}
+.main-nav a:hover{
+  background:#8c6b3f;
+  color:white;
 }
 
-/* ヤシ装飾 */
-.palm-left{
-  position:absolute;
-  bottom:0; left:0;
-  width:80px;
-  z-index:2;
+/* メモ・注意書き */
+.menu-note{
+  text-align:center;
+  font-size:14px;
+  color:#fff;
+  margin-top:20px;
+  text-shadow:1px 1px 4px rgba(0,0,0,0.5);
 }
-.palm-right{
-  position:absolute;
-  bottom:0; right:0;
-  width:80px;
-  z-index:2;
-}
-
-/* ナビ・セクション */
-nav{display:flex; flex-wrap:wrap; justify-content:center; gap:12px; padding:15px; background:white;}
-nav a{display:inline-block;padding:10px 18px;background:#f5f5f5;border:1px solid #ddd;border-radius:30px;text-decoration:none;color:#333;font-size:14px;transition:0.3s;}
-nav a:hover{background:var(--accent); color:#fff;}
-
-section{max-width:900px; margin:auto; padding:60px 15px; text-align:center;}
-h2{text-align:center; color:var(--main); margin-bottom:30px; font-size:28px; font-weight:600;}
-section p{font-size:16px; line-height:1.8; margin-bottom:20px;}
-section ul{list-style:none; padding:0; margin:0 0 20px 0;}
-section ul li{margin-bottom:15px; font-size:16px; line-height:1.7;}
-#about, #point, #staff{background:white; border-radius:15px; padding:30px; margin-bottom:40px;}
-#about img{width:100%; height:auto; border-radius:12px; margin-bottom:20px;}
-.about-images{display:flex; gap:20px; margin-bottom:20px;}
-.about-images img{width:50%; height:260px; object-fit:cover; border-radius:15px;}
-.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
-.gallery img{width:100%; height:200px; object-fit:cover; border-radius:10px;}
-#staff .spa-card img{width:200px; height:200px; object-fit:cover; border-radius:50%; box-shadow:0 10px 25px rgba(0,0,0,0.15); margin-bottom:15px;}
-.staff-card{max-width:400px; margin:auto;}
-.insta-btn{background:#E1306C; color:white; padding:12px 25px; border-radius:30px; text-decoration:none;}
-.reserve-btn{display:inline-block; background:linear-gradient(135deg,var(--accent),#b7944e); color:white; padding:14px 28px; border-radius:30px; text-decoration:none; font-size:15px; box-shadow:0 10px 25px rgba(0,0,0,0.2);}
-.map iframe{width:100%; height:300px; border:0; border-radius:10px;}
-footer{background:var(--main); color:white; text-align:center; padding:30px;}
 
 /* スマホ対応 */
 @media screen and (max-width:768px){
-  .hero{height:50vh;}
-  .hero-text h1{font-size:22px;}
-  .hero-text p{font-size:14px;}
-  .about-images{flex-direction:column;}
-  .about-images img{width:100%; height:180px;}
-  .gallery{grid-template-columns:1fr 1fr;}
-  #staff .spa-card img{width:140px; height:140px;}
-  .hero-btn{padding:12px 24px; font-size:14px;}
-  section p, section ul li{font-size:15px;}
-  .palm-left, .palm-right{width:60px;}
+  h1{
+    font-size:32px;
+  }
+  .menu-title{
+    font-size:22px;
+  }
+  .menu-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+  }
 }
