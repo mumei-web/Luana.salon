@@ -325,3 +325,40 @@ transform:translateX(-50%);
     padding:16px 0;
   }
 }
+/* ===== ABOUT 画像統一 ===== */
+#point{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  align-items:center;
+}
+
+/* 画像 */
+#point img{
+  width:100%;
+  height:220px;          /* ←高さ固定が超重要 */
+  object-fit:cover;      /* ←見切れ防止 */
+  border-radius:15px;
+}
+
+/* テキストは下に */
+#point p{
+  grid-column:1 / -1;
+  margin-top:10px;
+}
+@media screen and (max-width:768px){
+
+  #point{
+    grid-template-columns:1fr; /* 1列 */
+  }
+
+  #point img{
+    height:180px; /* スマホは少し小さく */
+  }
+
+}
+.about-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
