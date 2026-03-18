@@ -281,3 +281,35 @@ padding:16px;
 }
 
 }
+#about,
+#point{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+#about img,
+#point img{
+  width:50%;
+  border-radius:15px;
+}
+
+#about p,
+#point p{
+  width:50%;
+}
+@media screen and (max-width:768px){
+
+  #about,
+  #point{
+    flex-direction:column;
+  }
+
+  #about img,
+  #point img,
+  #about p,
+  #point p{
+    width:100%;
+  }
+
+}
