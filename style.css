@@ -17,7 +17,7 @@ body{
   color:#333;
   line-height:1.7;
   overflow-x:hidden;
-  background: #fff;
+  background:#fff;
 }
 
 /* ===== ヒーロー ===== */
@@ -90,8 +90,8 @@ nav{
   gap:10px;
   padding:15px;
   background: rgba(255,255,255,0.95);
-  position:relative;
-  z-index:10;
+  position: relative;
+  z-index:5; /* ヒーローより前面に表示 */
 }
 
 nav a{
@@ -103,7 +103,6 @@ nav a{
   font-size:14px;
   border:1px solid #ddd;
   transition:0.3s;
-  text-align:center;
 }
 
 nav a:hover{
@@ -126,13 +125,13 @@ section{
 .about-images{
   display:flex;
   gap:20px;
-  flex-wrap:wrap;
   margin-bottom:20px;
+  flex-wrap:wrap;
 }
 
 .about-images img{
   flex:1 1 48%;
-  aspect-ratio:1/1;  /* 正方形で統一 */
+  aspect-ratio: 1/1; /* 正方形に統一 */
   object-fit:cover;
   border-radius:15px;
 }
@@ -255,7 +254,6 @@ footer{
   }
   .about-images img{
     width:100%;
-    aspect-ratio:auto;
     height:auto;
   }
 
@@ -277,15 +275,8 @@ footer{
     font-size:16px;
   }
 
-  /* ナビ折り返し、幅調整 */
-  nav{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-  }
   nav a{
-    flex:1 1 45%;
-    font-size:14px;
-    padding:10px 0;
+    font-size:13px;
+    padding:8px 12px;
   }
 }
