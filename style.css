@@ -313,3 +313,7 @@ padding:16px;
   }
 
 }
+#about p,
+#point p{
+  margin-top:10px;
+}
