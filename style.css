@@ -1,5 +1,4 @@
 /* ===== カラー設定 ===== */
-
 :root{
 --main:#1f4d4f;
 --accent:#c6a86a;
@@ -8,40 +7,48 @@
 }
 
 /* ===== 全体 ===== */
-
 body{
 margin:0;
 font-family:'Noto Sans JP',sans-serif;
-background:var(--bg);
-color:var(--text);
+color:#333;
 line-height:1.9;
+
+/* 背景 */
+background-image:
+linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
 /* ===== ヘッダー ===== */
-
 header{
 text-align:center;
 }
 
-/* ===== トップ Coming Soon ===== */
-
-.hero{
+/* ===== スライダー ===== */
+.hero-slider{
+position:relative;
 width:100%;
-height:300px;
-background:#eaeaea;
-display:flex;
-align-items:center;
-justify-content:center;
+height:420px;
+overflow:hidden;
 }
 
-.hero-coming{
-font-size:30px;
-color:#888;
-font-family:'Playfair Display',serif;
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:1s;
+}
+
+.slide.active{
+opacity:1;
 }
 
 /* ===== 店名 ===== */
-
 header h1{
 margin-top:30px;
 font-family:'Playfair Display',serif;
@@ -55,15 +62,12 @@ letter-spacing:2px;
 color:#777;
 }
 
-/* ===== サブタイトル ===== */
-
 header p{
 color:#666;
 font-size:16px;
 }
 
 /* ===== ナビ ===== */
-
 nav{
 display:flex;
 justify-content:center;
@@ -90,7 +94,6 @@ color:white;
 }
 
 /* ===== セクション ===== */
-
 section{
 padding:80px 25px;
 max-width:900px;
@@ -98,7 +101,6 @@ margin:auto;
 }
 
 /* ===== 見出し ===== */
-
 h2{
 font-family:'Playfair Display',serif;
 font-size:30px;
@@ -107,8 +109,7 @@ color:var(--main);
 margin-bottom:40px;
 }
 
-/* ===== カードセクション ===== */
-
+/* ===== カード ===== */
 #about,#point,#menu,#staff,#info{
 background:white;
 border-radius:20px;
@@ -117,8 +118,7 @@ box-shadow:0 20px 50px rgba(0,0,0,0.05);
 margin-bottom:60px;
 }
 
-/* ===== 予約ボタン ===== */
-
+/* ===== ボタン ===== */
 .reserve-center{
 text-align:center;
 margin-top:20px;
@@ -141,92 +141,49 @@ transform:translateY(-3px);
 }
 
 /* ===== ギャラリー ===== */
-
 .gallery{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
 }
 
-.nail-card{
-background:#eaeaea;
-height:180px;
-border-radius:14px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#777;
-font-size:14px;
-}
-
-/* ===== メニュー ===== */
-
-.menu-item{
-display:flex;
-justify-content:space-between;
-padding:16px 0;
-border-bottom:1px solid #eee;
-font-size:16px;
-}
-
-.price{
-color:var(--accent);
-font-weight:bold;
+.gallery img{
+width:100%;
+border-radius:10px;
 }
 
 /* ===== スタッフ ===== */
+.spa-card img{
+width:100%;
+border-radius:15px;
+}
 
 .staff-card{
 text-align:center;
 }
 
-.staff-card img{
-width:160px;
-border-radius:50%;
-margin-bottom:10px;
+/* ===== Instagram ===== */
+.insta{
+display:flex;
+justify-content:center;
 }
 
-/* ===== MAP ===== */
-
-iframe{
-width:100%;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* ===== フッター ===== */
-
-footer{
-background:var(--main);
+.insta-btn{
+display:inline-block;
+background:#E1306C;
 color:white;
-text-align:center;
-padding:40px;
-margin-top:80px;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
 }
 
-/* ===== スマホ ===== */
-
-@media(max-width:768px){
-
-.hero{
-height:220px;
+.insta-btn i{
+margin-right:8px;
 }
 
-header h1{
-font-size:28px;
-}
-
-.gallery{
-grid-template-columns:repeat(2,1fr);
-}
-
-section{
-padding:60px 20px;
-}
-
-}
 /* ===== MAP ===== */
-
 .map{
 max-width:800px;
 margin:auto;
@@ -239,7 +196,6 @@ border:0;
 border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
-/* ===== 住所 ===== */
 
 .address{
 text-align:center;
@@ -247,15 +203,16 @@ margin-bottom:20px;
 font-size:15px;
 }
 
-/* ===== Instagram ===== */
-
-.insta{
-display:flex;
-justify-content:center;
+/* ===== フッター ===== */
+footer{
+background:var(--main);
+color:white;
+text-align:center;
+padding:40px;
+margin-top:80px;
 }
 
 /* ===== 固定予約ボタン ===== */
-
 .fixed-reserve{
 position:fixed;
 bottom:20px;
@@ -270,199 +227,48 @@ font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 z-index:999;
 }
+
+/* ===== スマホ対応（最重要） ===== */
+@media screen and (max-width: 768px){
+
 .hero-slider{
-width:100%;
-height:320px;
-overflow:hidden;
-position:relative;
-}
-
-.hero-slider img{
-width:100%;
-height:320px;
-object-fit:cover;
-position:absolute;
-animation:slide 15s infinite;
-}
-
-.hero-slider img:nth-child(2){
-animation-delay:5s;
-}
-
-.hero-slider img:nth-child(3){
-animation-delay:10s;
-}
-
-@keyframes slide{
-
-0%{opacity:0;}
-10%{opacity:1;}
-30%{opacity:1;}
-40%{opacity:0;}
-100%{opacity:0;}
-
-}
-.hero-slider{
-position:relative;
-}
-
-.hero-slider img{
-width:100%;
-height:420px;
-object-fit:cover;
-}
-
-.coming-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-text-align:center;
-color:white;
-background:rgba(0,0,0,0.4);
-padding:30px 50px;
-border-radius:10px;
-}
-
-.coming-text h2{
-font-size:42px;
-margin:0;
-}
-
-.coming-text p{
-margin-top:10px;
-font-size:18px;
-}
-.hero-slider{
-position:relative;
-width:100%;
-height:420px;
-overflow:hidden;
+height:220px;
 }
 
 .slide{
-position:absolute;
+height:220px;
+}
+
+header h1{
+font-size:24px;
+}
+
+header p{
+font-size:14px;
+}
+
+nav{
+flex-direction:column;
+padding:15px;
+}
+
+nav a{
 width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:1s;
-}
-
-.slide.active{
-opacity:1;
-}
-
-.coming-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
 text-align:center;
-color:white;
-background:rgba(0,0,0,0.4);
-padding:30px 50px;
-border-radius:10px;
 }
 
-.coming-text h2{
-font-size:42px;
-margin:0;
+section{
+padding:50px 15px;
 }
 
-.coming-text p{
-margin-top:10px;
-font-size:18px;
-}
-.insta-btn{
-display:inline-block;
-background:#E1306C;
-color:white;
-padding:14px 30px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-font-size:16px;
+.gallery{
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
-.insta-btn i{
-margin-right:8px;
-font-size:20px;
-}
-body{
-margin:0;
-font-family:'Noto Sans JP',sans-serif;
-color:#333;
-
-/* ヤシの木背景 */
-
-background-image:
-linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
-url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-}
-.spa-card img{
+.reserve-btn{
 width:100%;
-height:100%;
-object-fit:cover;
-border-radius:15px;
+padding:16px;
 }
-/* ===== スマホ対応 ===== */
-@media screen and (max-width: 768px){
-
-  /* ヘッダー文字 */
-  h1{
-    font-size: 22px;
-    line-height: 1.4;
-  }
-
-  header p{
-    font-size: 14px;
-  }
-
-  /* ナビを縦並び */
-  nav{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav a{
-    display: block;
-    padding: 10px;
-    background: #f4e9e2;
-    border-radius: 10px;
-  }
-
-  /* 画像を100%に */
-  img{
-    width: 100%;
-    height: auto;
-  }
-
-  /* ギャラリーを2列 */
-  .gallery{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  /* スタッフ */
-  .spa-card img{
-    width: 100%;
-  }
-
-  .staff-card{
-    padding: 10px;
-  }
-
-  /* ボタン */
-  .reserve-btn{
-    width: 90%;
-    font-size: 16px;
-  }
 
 }
