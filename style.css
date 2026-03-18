@@ -285,3 +285,19 @@ footer{
     display: none;
   }
 }
+/* ABOUT画像を正方形に揃える */
+.about-images img {
+  width: 100%;           /* 親コンテナに合わせる */
+  aspect-ratio: 1 / 1;   /* 縦横比 1:1（正方形） */
+  object-fit: cover;     /* はみ出した部分は切る */
+  border-radius: 15px;
+}
+
+/* スマホ用：縦並びでも比率を維持 */
+@media screen and (max-width:768px){
+  .about-images img {
+    width: 100%;
+    aspect-ratio: auto; /* スマホは自然な比率に */
+    height: auto;
+  }
+}
