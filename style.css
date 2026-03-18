@@ -414,3 +414,12 @@ h2 {
 p, li {
   color: #333;
 }
+section {
+  max-width: 900px;       /* 幅を制限 */
+  margin: 0 auto;         /* 左右中央寄せ */
+  padding: 20px;
+}
+ul {
+  list-style: none;  /* デフォルトの・を消す */
+  padding-left: 0;   /* 左の余白も消す */
+}
