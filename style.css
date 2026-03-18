@@ -339,3 +339,17 @@ footer{
     line-height: 1.5;
   }
 }
+/* デフォルト：PC表示 */
+.about-sp {
+    display: none;
+}
+
+/* スマホ表示のみ切替 */
+@media screen and (max-width: 768px) {
+    .about-pc {
+        display: none;   /* PC文章を非表示 */
+    }
+    .about-sp {
+        display: block;  /* スマホ文章を表示 */
+    }
+}
