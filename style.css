@@ -1,376 +1,157 @@
 /* ===== カラー ===== */
 :root{
---main:#1f4d4f;
---accent:#c6a86a;
+  --main:#1f4d4f;
+  --accent:#c6a86a;
 }
 
 /* ===== リセット ===== */
-*{
-box-sizing:border-box;
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
 }
 
 html,body{
-margin:0;
-overflow-x:hidden;
-font-family:'Noto Sans JP',sans-serif;
-color:#333;
-line-height:1.8;
+  margin:0;
+  overflow-x:hidden;
+  font-family:'Noto Sans JP',sans-serif;
+  color:#333;
+  line-height:1.8;
 }
 
 /* ===== 背景 ===== */
 body{
-background:
-linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
-url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+  background:
+  linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+  url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 }
 
 /* ===== ヘッダー ===== */
 header{
-text-align:center;
+  text-align:center;
 }
 
-/* ===== 動画 ===== */
+/* ===== ヒーロー ===== */
 .hero{
-position:relative;
-height:60vh;
-overflow:hidden;
+  position:relative;
+  height:60vh;
+  overflow:hidden;
 }
 
 .hero-video{
-width:100%;
-height:100%;
-object-fit:cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.3);
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.3);
 }
 
 .hero p{
-position:absolute;
-bottom:80px;
-left:20px;
-color:#fff;
-font-size:18px;
-z-index:2;
+  position:absolute;
+  bottom:90px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#fff;
+  font-size:18px;
+  z-index:2;
+  text-align:center;
 }
 
 .hero-btn{
-position:absolute;
-bottom:30px;
-left:20px;
-background:var(--accent);
-color:white;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
-z-index:2;
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--accent);
+  color:white;
+  padding:12px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  z-index:2;
 }
 
 /* ===== タイトル ===== */
 header h1{
-font-family:'Playfair Display',serif;
-font-size:36px;
-color:var(--main);
-margin-top:20px;
+  font-family:'Playfair Display',serif;
+  font-size:36px;
+  color:var(--main);
+  margin-top:20px;
 }
 
 .sub{
-font-size:12px;
-color:#777;
+  font-size:12px;
+  color:#777;
 }
 
 /* ===== ナビ ===== */
 nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-padding:15px;
-background:white;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  padding:15px;
+  background:white;
 }
 
 nav a{
-padding:10px 15px;
-background:#f2f6f6;
-border-radius:30px;
-text-decoration:none;
-color:#333;
-font-size:14px;
+  padding:10px 15px;
+  background:#f2f6f6;
+  border-radius:30px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
 }
 
 /* ===== セクション ===== */
 section{
-max-width:900px;
-margin:auto;
-padding:60px 15px;
+  max-width:900px;
+  margin:auto;
+  padding:60px 15px;
 }
 
 h2{
-text-align:center;
-color:var(--main);
-margin-bottom:30px;
-}
-
-/* ===== SERVICE / ABOUT ===== */
-#about,#point{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-background:white;
-padding:25px;
-border-radius:15px;
-margin-bottom:30px;
-}
-
-#about img,#point img{
-width:48%;
-border-radius:10px;
-}
-
-#about p,#point p{
-width:48%;
-}
-
-/* ===== ギャラリー ===== */
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-}
-
-.gallery img{
-width:100%;
-aspect-ratio:1/1;
-object-fit:cover;
-border-radius:10px;
-}
-
-/* ===== ボタン ===== */
-.reserve-btn{
-display:inline-block;
-background:var(--accent);
-color:white;
-padding:14px 30px;
-border-radius:30px;
-text-decoration:none;
-}
-
-/* ===== Instagram ===== */
-.insta{
-text-align:center;
-}
-
-.insta-btn{
-background:#E1306C;
-color:white;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
-}
-
-/* ===== STAFF（プロ仕様） ===== */
-#staff{
-text-align:center;
-background:white;
-padding:30px;
-border-radius:15px;
-}
-
-.spa-card img{
-width:220px;
-height:220px;
-object-fit:cover;
-border-radius:50%;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-margin-bottom:15px;
-}
-
-.staff-card{
-max-width:400px;
-margin:auto;
-}
-
-/* ===== MAP ===== */
-.map iframe{
-width:100%;
-height:300px;
-border:0;
-border-radius:10px;
-}
-
-/* ===== フッター ===== */
-footer{
-background:var(--main);
-color:white;
-text-align:center;
-padding:30px;
-}
-
-/* ===== 固定ボタン ===== */
-.fixed-reserve{
-position:fixed;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-background:var(--accent);
-color:white;
-padding:14px 30px;
-border-radius:30px;
-text-decoration:none;
-z-index:999;
-}
-
-/* ===== スマホ ===== */
-@media screen and (max-width:768px){
-
-.hero{
-height:45vh;
-}
-
-nav{
-flex-direction:column;
-}
-
-nav a{
-width:100%;
-text-align:center;
-}
-
-#about,#point{
-flex-direction:column;
-}
-
-#about img,#point img,
-#about p,#point p{
-width:100%;
-}
-
-.gallery{
-grid-template-columns:1fr 1fr;
-}
-
-.spa-card img{
-width:160px;
-height:160px;
-}
-
-}
-/* ===== STAFF 強制修正 ===== */
-#staff .spa-card img{
-  width:220px !important;
-  height:220px !important;
-  object-fit:cover;
-  border-radius:50%;
-  display:block;
-  margin:0 auto 20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-#staff .staff-card{
-  max-width:400px;
-  margin:auto;
   text-align:center;
-}
-/* ===== STAFF スマホ完全対応 ===== */
-@media screen and (max-width:768px){
-
-  #staff .spa-card img{
-    width:160px !important;
-    height:160px !important;
-    object-fit:cover;
-    border-radius:50%;
-    display:block;
-    margin:0 auto 15px;
-  }
-
-  #staff .staff-card{
-    width:100%;
-    padding:0 10px;
-    text-align:center;
-  }
-
-}
-/* ===== 予約ボタン中央固定 ===== */
-.fixed-reserve{
-  position:fixed;
-  bottom:20px;
-
-  left:50%;
-  transform:translateX(-50%);
-
-  background:#c6a86a;
-  color:white;
-  padding:16px 40px;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  z-index:999;
-
-  text-align:center;
-  white-space:nowrap;
-}
-left:50%;
-transform:translateX(-50%);
-@media screen and (max-width:768px){
-  .fixed-reserve{
-    width:90%;
-    padding:16px 0;
-  }
-}
-/* ===== ABOUT 画像統一 ===== */
-#point{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  align-items:center;
+  color:var(--main);
+  margin-bottom:30px;
 }
 
-/* 画像 */
-#point img{
-  width:100%;
-  height:220px;          /* ←高さ固定が超重要 */
-  object-fit:cover;      /* ←見切れ防止 */
+/* ===== SERVICE ===== */
+#about{
+  background:white;
+  padding:25px;
   border-radius:15px;
+  margin-bottom:30px;
+  text-align:center;
 }
 
-/* テキストは下に */
-#point p{
-  grid-column:1 / -1;
-  margin-top:10px;
+#about img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:20px;
 }
-@media screen and (max-width:768px){
 
-  #point{
-    grid-template-columns:1fr; /* 1列 */
-  }
-
-  #point img{
-    height:180px; /* スマホは少し小さく */
-  }
-
-}
-.about-images{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-/* ===== ABOUT 完全版 ===== */
+/* ===== ABOUT ===== */
 #point{
-  max-width:800px;
-  margin:auto;
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  margin-bottom:30px;
 }
 
 .about-images{
   display:flex;
   gap:20px;
+  margin-bottom:20px;
 }
 
 .about-images img{
@@ -380,8 +161,123 @@ transform:translateX(-50%);
   border-radius:15px;
 }
 
-/* スマホ */
+/* ===== ギャラリー ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.gallery img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* ===== ボタン ===== */
+.reserve-center{
+  text-align:center;
+  margin:40px 0;
+}
+
+.reserve-btn{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--accent),#b7944e);
+  color:white;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== Instagram ===== */
+.insta{
+  text-align:center;
+}
+
+.insta-btn{
+  background:#E1306C;
+  color:white;
+  padding:12px 25px;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* ===== STAFF ===== */
+#staff{
+  text-align:center;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+}
+
+#staff .spa-card img{
+  width:200px;
+  height:200px;
+  object-fit:cover;
+  border-radius:50%;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom:15px;
+}
+
+.staff-card{
+  max-width:400px;
+  margin:auto;
+}
+
+/* ===== MAP ===== */
+.map iframe{
+  width:100%;
+  height:300px;
+  border:0;
+  border-radius:10px;
+}
+
+/* ===== フッター ===== */
+footer{
+  background:var(--main);
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+
+/* ===== 固定予約ボタン ===== */
+.fixed-reserve{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--accent);
+  color:white;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  z-index:999;
+}
+
+/* ===== スマホ ===== */
 @media screen and (max-width:768px){
+
+  .hero{
+    height:45vh;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  nav{
+    flex-direction:column;
+  }
+
+  nav a{
+    width:auto;
+  }
+
   .about-images{
     flex-direction:column;
   }
@@ -390,51 +286,22 @@ transform:translateX(-50%);
     width:100%;
     height:180px;
   }
-}
-/* ===== ボタン調整 ===== */
-.reserve-btn{
-  background:linear-gradient(135deg,var(--accent),#b7944e);
-  color:white;
-  border:none;
-  padding:14px 30px;
-  border-radius:40px;
-  font-size:15px;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
 
-/* スマホ */
-@media screen and (max-width:768px){
+  #about img{
+    height:180px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  #staff .spa-card img{
+    width:140px;
+    height:140px;
+  }
+
   .reserve-btn{
-    width:auto;      /* ←これが重要 */
-    padding:14px 25px;
-  }
-}
-.reserve-center{
-  text-align:center;
-  margin:40px 0;
-}
-/* ===== 固定予約ボタン ===== */
-.fixed-reserve{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-
-  background:#c6a86a;
-  color:white;
-  padding:14px 30px;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  z-index:999;
-}
-
-/* スマホ */
-@media screen and (max-width:768px){
-  .fixed-reserve{
     width:auto;
-    padding:14px 25px;
   }
+
 }
