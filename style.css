@@ -17,7 +17,7 @@ body{
   color:#333;
   line-height:1.7;
   overflow-x:hidden;
-  background: #fff;
+  background:#fff;
 }
 
 /* ===== ヒーロー ===== */
@@ -83,19 +83,18 @@ body{
 }
 
 /* ===== ナビ ===== */
-nav{
+header nav{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:10px;
   padding:15px;
   background: rgba(255,255,255,0.95);
-  position: relative; /* ここをabsoluteではなくrelativeに変更 */
+  position: relative; /* 親内でフロー通り表示 */
   z-index:5;
-  margin-top:10px;    /* 動画の下に表示 */
 }
 
-nav a{
+header nav a{
   text-decoration:none;
   padding:10px 18px;
   border-radius:30px;
@@ -107,7 +106,7 @@ nav a{
   display:inline-block;
 }
 
-nav a:hover{
+header nav a:hover{
   background:var(--accent);
   color:white;
 }
@@ -132,13 +131,13 @@ section{
 .about-images{
   display:flex;
   gap:20px;
+  flex-wrap:wrap;
   margin-bottom:20px;
-  flex-wrap: wrap;
 }
 
 .about-images img{
-  flex: 1 1 48%;
-  aspect-ratio: 1/1;   /* 縦横比を1:1で統一 */
+  flex:1 1 48%;
+  aspect-ratio:1/1; /* 正方形固定 */
   object-fit:cover;
   border-radius:15px;
 }
@@ -199,14 +198,14 @@ section{
 }
 
 /* Instagram */
-#instagram {
+#instagram{
   max-width:100%;
   padding:60px 15px;
   text-align:center;
   box-sizing:border-box;
 }
 
-#instagram .insta-btn {
+#instagram .insta-btn{
   display:block;
   width:90%;
   max-width:500px;
@@ -254,7 +253,6 @@ footer{
     font-size:14px;
   }
 
-  /* ABOUT画像縦並び */
   .about-images{
     flex-direction:column;
     gap:15px;
@@ -262,28 +260,25 @@ footer{
   .about-images img{
     width:100%;
     height:auto;
-    aspect-ratio: auto; /* スマホは自然な比率 */
+    aspect-ratio:auto;
   }
 
-  /* GALLERYスマホ2列 */
   .gallery{
     grid-template-columns:1fr 1fr;
   }
 
-  /* STAFF写真縮小 */
   #staff .spa-card img{
     width:140px;
     height:140px;
   }
 
-  /* Instagramボタン幅いっぱい */
   #instagram .insta-btn{
     width:100%;
     padding:20px 0;
     font-size:16px;
   }
 
-  nav a{
+  header nav a{
     font-size:13px;
     padding:8px 12px;
   }
