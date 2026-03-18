@@ -313,3 +313,35 @@ footer{
   }
 
 }
+.hero-text {
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-text strong {
+  font-size: 28px;
+  display: block;
+  color: #ffcc99;
+  margin: 10px 0;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+section ul li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
