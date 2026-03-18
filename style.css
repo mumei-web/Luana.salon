@@ -410,3 +410,59 @@ height:100%;
 object-fit:cover;
 border-radius:15px;
 }
+/* ===== スマホ対応 ===== */
+@media screen and (max-width: 768px){
+
+  /* ヘッダー文字 */
+  h1{
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  header p{
+    font-size: 14px;
+  }
+
+  /* ナビを縦並び */
+  nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a{
+    display: block;
+    padding: 10px;
+    background: #f4e9e2;
+    border-radius: 10px;
+  }
+
+  /* 画像を100%に */
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  /* ギャラリーを2列 */
+  .gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* スタッフ */
+  .spa-card img{
+    width: 100%;
+  }
+
+  .staff-card{
+    padding: 10px;
+  }
+
+  /* ボタン */
+  .reserve-btn{
+    width: 90%;
+    font-size: 16px;
+  }
+
+}
