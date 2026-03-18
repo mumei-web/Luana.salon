@@ -328,3 +328,16 @@ footer {
     display: block;
   }
 }
+/* Instagramセクション修正版 */
+#instagram {
+  max-width: 900px;       /* セクションと同じ幅 */
+  margin: 20px auto;      /* 上下余白と中央寄せ */
+  padding: 40px 20px;     /* 内側余白 */
+  background: rgba(255, 255, 255, 0.45); /* ガラス風 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
