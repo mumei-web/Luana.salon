@@ -368,3 +368,30 @@ body {
   /* background-color: rgba(255,255,255,0.2);
      background-blend-mode: lighten; */
 }
+body {
+  margin: 0; /* ページ上下の余白をなくす */
+  padding: 0; /* ページ全体の余白をなくす */
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+
+  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* 各セクションの余白を小さく */
+section {
+  margin: 40px 0; /* 元々50pxくらいなら少し減らす */
+  padding: 20px 0; /* 上下パディングを調整 */
+}
+
+/* 特にヘッダー下の余白を減らす */
+header {
+  margin-bottom: 20px;
+  padding-bottom: 0;
+}
+h1, h2 {
+  margin-top: 30px;  /* 元70pxなら半分に */
+  margin-bottom: 20px;
+  padding: 0;
+}
