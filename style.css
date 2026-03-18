@@ -27,25 +27,42 @@ header{
 text-align:center;
 }
 
-/* ===== スライダー ===== */
-.hero-slider{
-position:relative;
-width:100%;
-height:420px;
-overflow:hidden;
+/* ===== トップ動画 ===== */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:300px;
+  overflow:hidden;
 }
 
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:1s;
+.hero-video{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* ←デザイン重視 */
 }
 
-.slide.active{
-opacity:1;
+/* 文字 */
+
+.coming-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+  color:white;
+  background:rgba(0,0,0,0.4);
+  padding:20px 30px;
+  border-radius:10px;
+}
+
+.coming-text h2{
+  font-size:28px;
+  margin:0;
+}
+
+.coming-text p{
+  font-size:14px;
 }
 
 /* ===== 店名 ===== */
@@ -277,4 +294,19 @@ padding:16px;
   height: 200px;        /* ←高さ固定 */
   object-fit: cover;    /* ←これが超重要 */
   border-radius: 10px;
+}
+@media screen and (max-width:768px){
+
+  .hero{
+    height:200px;
+  }
+
+  .coming-text h2{
+    font-size:20px;
+  }
+
+  .coming-text p{
+    font-size:12px;
+  }
+
 }
