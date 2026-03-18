@@ -91,23 +91,31 @@ header h1{
   color:#777;
 }
 
-/* ===== ナビ ===== */
+/* ===== ナビ（PC） ===== */
 nav{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:10px;
+  gap:12px;
   padding:15px;
   background:white;
 }
 
 nav a{
-  padding:10px 15px;
-  background:#f2f6f6;
+  display:inline-block;
+  padding:10px 18px;
+  background:#f5f5f5;
+  border:1px solid #ddd;
   border-radius:30px;
   text-decoration:none;
   color:#333;
   font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  background:var(--accent);
+  color:#fff;
 }
 
 /* ===== セクション ===== */
@@ -132,14 +140,14 @@ h2{
   text-align:center;
 }
 
-/* ===== SERVICE画像改善 ===== */
 #about img{
   width:100%;
-  height:auto;          /* ←これが重要 */
-  object-fit:contain;   /* ←切らない */
+  height:auto;
+  object-fit:contain;
   border-radius:10px;
   margin-bottom:20px;
 }
+
 /* ===== ABOUT ===== */
 #point{
   background:white;
@@ -259,7 +267,7 @@ footer{
   z-index:999;
 }
 
-/* ===== スマホ ===== */
+/* ===== スマホ最適化 ===== */
 @media screen and (max-width:768px){
 
   .hero{
@@ -270,12 +278,18 @@ footer{
     font-size:14px;
   }
 
+  /* ←ここが今回の一番重要な修正 */
   nav{
-    flex-direction:column;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
   }
 
   nav a{
     width:auto;
+    padding:10px 16px;
+    font-size:13px;
   }
 
   .about-images{
@@ -287,10 +301,6 @@ footer{
     height:180px;
   }
 
-  #about img{
-    height:180px;
-  }
-
   .gallery{
     grid-template-columns:1fr 1fr;
   }
@@ -298,24 +308,6 @@ footer{
   #staff .spa-card img{
     width:140px;
     height:140px;
-  }
-
-  .reserve-btn{
-    width:auto;
-  }
-
-}
-@media screen and (max-width:768px){
-
-  nav{
-    flex-direction:row;      /* ←縦やめる */
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  nav a{
-    width:auto;              /* ←これ重要 */
-    padding:10px 18px;
   }
 
 }
