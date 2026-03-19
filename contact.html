@@ -95,6 +95,15 @@ h1 {
     margin-bottom: 30px;
   }
 }
+  /* 初期状態 */
+.pc-only { display: inline; }
+.sp-only { display: none; }
+
+/* スマホ表示 */
+@media screen and (max-width: 768px) {
+  .pc-only { display: none !important; }
+  .sp-only { display: inline !important; }
+}
 </style>
 
 </head>
