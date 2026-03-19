@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>CONTACT</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Sans+JP&display=swap" rel="stylesheet">
@@ -29,8 +27,8 @@ h1 {
   font-size: 42px;
   letter-spacing: 6px;
   color: #8c6b3f;
-  margin-top: 60px;    /* ページ上から少し上 */
-  margin-bottom: 20px; /* ナビとの距離 */
+  margin-top: 100px;   /* 上余白を増やして下げる */
+  margin-bottom: 30px; /* ナビとの距離 */
 }
 
 /* ===== ナビ ===== */
@@ -38,8 +36,8 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;    /* h1 との距離 */
-  margin-bottom: 40px; /* 下の余白 */
+  margin-top: 20px;
+  margin-bottom: 50px; /* 下の余白を広くして感覚を開ける */
 }
 
 .main-nav a {
@@ -78,34 +76,33 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  .pc-br::before {
-    content: "";
-  }
-}
+  .pc-br::before { content: ""; }
 
-/* ===== スマホ用調整 ===== */
-@media screen and (max-width: 768px) {
+  /* スマホ用余白調整 */
   h1 {
-    margin-top: 40px;    /* スマホは少し上 */
-    margin-bottom: 15px; /* ナビとの距離 */
+    margin-top: 80px;    /* 少し下げる */
+    margin-bottom: 25px; /* ナビとの距離 */
   }
-
   .main-nav {
-    margin-top: 15px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
-}
-  /* 初期状態 */
-.pc-only { display: inline; }
-.sp-only { display: none; }
 
-/* スマホ表示 */
-@media screen and (max-width: 768px) {
+  /* スマホ用改行 */
   .pc-only { display: none !important; }
   .sp-only { display: inline !important; }
 }
-</style>
 
+/* PC用表示切替 */
+.pc-only { display: inline; }
+.sp-only { display: none; }
+
+.line-title{
+  margin-top:10px;
+  margin-bottom:15px;
+}
+
+</style>
 </head>
 
 <body>
@@ -113,50 +110,44 @@ h1 {
 <h1>CONTACT</h1>
 
 <nav class="main-nav">
-<a href="index.html">HOME</a>
-<a href="menu.html">MENU</a>
-<a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" target="_blank">RESERVE</a>
+  <a href="index.html">HOME</a>
+  <a href="menu.html">MENU</a>
+  <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" target="_blank">RESERVE</a>
 </nav>
 
 <div class="container">
 
 <section style="text-align:center; padding:60px 20px;">
-
   <h2 class="line-title">
-  <span class="pc-only">公式LINEで簡単にご相談いただけます</span>
-  <span class="sp-only">公式LINEで簡単に<br>ご相談いただけます</span>
-</h2>
+    <span class="pc-only">公式LINEで簡単にご相談いただけます</span>
+    <span class="sp-only">公式LINEで簡単に<br>ご相談いただけます</span>
+  </h2>
 
-<p class="line-text">
+  <p class="line-text">
+    <span class="pc-only">
+      ご予約のご相談・空き状況の確認は<br>
+      公式LINEからお問い合わせください。<br><br>
+      初めての方もお気軽にご連絡ください。<br><br>
+      「ホームページを見ました」と送っていただくだけで大丈夫です。
+    </span>
 
-  <span class="pc-only">
-    ご予約のご相談・空き状況の確認は<br>
-    公式LINEからお問い合わせください。<br><br>
-
-    初めての方もお気軽にご連絡ください。<br><br>
-
-    「ホームページを見ました」と送っていただくだけで大丈夫です。
-  </span>
-
-  <span class="sp-only">
-    ご予約のご相談・空き状況の確認は<br>
-    公式LINEからお問い合わせください。<br><br>
-
-    初めての方もお気軽にご連絡ください。<br><br>
-
-    「ホームページを見ました」と<br>
-    送っていただくだけで大丈夫です。
-  </span>
-
-</p>
+    <span class="sp-only">
+      ご予約のご相談・空き状況の確認は<br>
+      公式LINEからお問い合わせください。<br><br>
+      初めての方もお気軽にご連絡ください。<br><br>
+      「ホームページを見ました」と<br>
+      送っていただくだけで大丈夫です。
+    </span>
+  </p>
 
   <a href="https://lin.ee/OgkEGmP" target="_blank" class="reserve-btn">
     LINEでお問い合わせする
   </a>
-
 </section>
 
 </div>
 
+</body>
+</html>
 </body>
 </html>
