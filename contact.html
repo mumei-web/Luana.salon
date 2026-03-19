@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>CONTACT | Salon Luna</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h1>CONTACT</h1>
-<nav>
-<a href="index.html">HOME</a>
-<a href="menu.html">MENU</a>
-<a href="contact.html">CONTACT</a>
-</nav>
+  <h1>CONTACT</h1>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="menu.html">MENU</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
 </header>
 
-<section class="contact">
+<section style="text-align:center; padding:60px 20px;">
 
-<h2>CONTACT</h2>
+  <h2>公式LINEで簡単にご相談いただけます</h2>
 
-<form>
+  <p style="margin:20px 0;">
+    ご予約のご相談・ご質問は<br>
+    公式LINEからお気軽にお問い合わせください。
+  </p>
 
-<label>お名前</label>
-<input type="text" name="name" required>
+  <p style="margin-bottom:25px;">
+    「ホームページを見ました」と送っていただくとスムーズです。
+  </p>
 
-<label>メールアドレス</label>
-<input type="email" name="email" required>
-
-<label>お問い合わせ内容</label>
-<textarea name="message" rows="5"></textarea>
-
-<button type="submit">送信</button>
-
-</form>
+  <!-- LINEボタン -->
+  <a href="https://lin.ee/OgkEGmP" target="_blank" class="reserve-btn">
+    LINEでお問い合わせする
+  </a>
 
 </section>
 
 </body>
 </html>
+.reserve-btn {
+  display: inline-block;
+  background: #06C755; /* LINEカラー */
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
