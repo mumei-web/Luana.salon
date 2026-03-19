@@ -342,3 +342,8 @@ footer {
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .hide-sp {
+    display: none;
+  }
+}
