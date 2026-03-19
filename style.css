@@ -344,6 +344,6 @@ footer {
 }
 @media screen and (max-width: 768px) {
   .hide-sp {
-    display: none;
+    display: none; /* divごと非表示にする */
   }
 }
