@@ -76,7 +76,11 @@ text-decoration:none;
 font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
-
+@media screen and (max-width: 768px) {
+  .contact-text br {
+    display: none;
+  }
+}
 </style>
 
 </head>
@@ -97,7 +101,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
   <h2>公式LINEで簡単にご相談いただけます</h2>
 
-  <p style="margin:20px 0;">
+  <p class="contact-text" style="margin:20px 0;">
     ご予約のご相談・空き状況の確認は<br>
     公式LINEからお気軽にお問い合わせください。
   </p>
