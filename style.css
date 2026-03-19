@@ -148,17 +148,18 @@ section li {
 }
 
 /* ===== ul/li の修正（◆だけ表示、左寄せ） ===== */
-section ul {
-  list-style: none;      /* 「・」を消す */
-  padding-left: 0;       /* 左余白削除 */
-  margin: 10px 0;        /* 上下マージン調整 */
-  text-align: left;      /* 左寄せ */
+#about ul {
+  list-style: none;        /* ・を消す */
+  padding: 0;
+  margin: 20px 0;
+  text-align: center;      /* 中央寄せ */
 }
 
-section ul li {
-  margin-bottom: 10px;
-  padding-left: 0;
-  display: list-item;
+#about ul li {
+  display: inline-block;   /* 横並びにして中央寄せ */
+  margin: 0 15px 10px;     /* 横の間隔と下マージン */
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 /* ===== ABOUT画像 ===== */
