@@ -93,6 +93,23 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
     content: "";
   }
 }
+  /* 初期はスマホ表示 */
+.pc-only {
+  display: none;
+}
+.sp-only {
+  display: block;
+}
+
+/* PCだけ切り替え */
+@media screen and (min-width: 769px) {
+  .pc-only {
+    display: block;
+  }
+  .sp-only {
+    display: none;
+  }
+}
 </style>
 
 </head>
@@ -115,19 +132,31 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
   公式LINEで簡単に<span class="pc-br"></span>ご相談いただけます
 </h2>
 
+<h2>
+  <span class="pc-only">公式LINEで簡単にご相談いただけます</span>
+  <span class="sp-only">公式LINEで簡単に<br>ご相談いただけます</span>
+</h2>
+
 <p class="line-text">
 
-ご予約のご相談・空き状況の確認は
-公式LINEからお気軽にお問い合わせください。
+  <span class="pc-only">
+    ご予約のご相談・空き状況の確認は<br>
+    公式LINEからお気軽にお問い合わせください。<br><br>
 
-<span class="pc-br"></span>
+    初めての方もお気軽にご連絡ください。<br><br>
 
-初めての方もお気軽にご連絡ください。
+    「ホームページを見ました」と送っていただくだけで大丈夫です。
+  </span>
 
-<span class="pc-br"></span>
+  <span class="sp-only">
+    ご予約のご相談・空き状況の確認は<br>
+    公式LINEからお気軽にお問い合わせください。<br><br>
 
-「ホームページを見ました」と
-送っていただくだけで大丈夫です。
+    初めての方もお気軽にご連絡ください。<br><br>
+
+    「ホームページを見ました」と<br>
+    送っていただくだけで大丈夫です。
+  </span>
 
 </p>
 
