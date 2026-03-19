@@ -81,6 +81,18 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
     display: none;
   }
 }
+  /* PCでは改行する */
+.pc-br::before {
+  content: "\A";
+  white-space: pre;
+}
+
+/* スマホでは改行しない */
+@media screen and (max-width: 768px) {
+  .pc-br::before {
+    content: "";
+  }
+}
 </style>
 
 </head>
@@ -99,18 +111,14 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
 <section style="text-align:center; padding:60px 20px;">
 
-  <h2>公式LINEで簡単にご相談いただけます</h2>
+  <h2 class="line-title">
+  公式LINEで簡単に<span class="pc-br"></span>ご相談いただけます
+</h2>
 
-  <p class="contact-text" style="margin:20px 0;">
-    ご予約のご相談・空き状況の確認は<br>
-    公式LINEからお気軽にお問い合わせください。
-  </p>
-
-  <p>初めての方もお気軽にご連絡ください。</p>
-
-  <p style="margin-bottom:25px;">
-    「ホームページを見ました」と送っていただくだけで大丈夫です。
-  </p>
+<p class="line-text">
+  「ホームページを見ました」と<span class="pc-br"></span>
+  送っていただくだけで大丈夫です。
+</p>
 
   <a href="https://lin.ee/OgkEGmP" target="_blank" class="reserve-btn">
     LINEでお問い合わせする
