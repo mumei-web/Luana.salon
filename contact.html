@@ -100,14 +100,25 @@ h1{
   margin-top:10px;
   margin-bottom:15px;
 }
+  /* スマホ表示だけ調整 */
+@media screen and (max-width:768px) {
+  .contact-title {
+    margin-top:40px !important;    /* 上に少し移動 */
+    margin-bottom:15px !important; /* ナビとの距離を狭める */
+  }
+  .nav-sp-adjust {
+    margin-top:25px !important;    /* トップからナビまでの距離を広げる */
+    margin-bottom:50px !important; /* ナビと本文の距離を広げる */
+  }
+}
 </style>
 </head>
 
 <body>
 
-<h1>CONTACT</h1>
+<h1 class="contact-title">CONTACT</h1>
 
-<nav class="main-nav">
+<nav class="main-nav nav-sp-adjust">
   <a href="index.html">HOME</a>
   <a href="menu.html">MENU</a>
   <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" target="_blank">RESERVE</a>
