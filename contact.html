@@ -21,12 +21,12 @@ body{
 }
 
 /* ===== タイトル ===== */
-h1{
+.contact-title{
   text-align:center;
   font-family:'Cormorant Garamond',serif;
   font-size:42px;
   letter-spacing:6px;
-  margin-top:70px;
+  margin-top:70px;    /* PC表示用 */
   margin-bottom:50px;
   color:#8c6b3f;
 }
@@ -73,43 +73,28 @@ h1{
 .pc-br::before { content: "\A"; white-space: pre; }
 @media screen and (max-width: 768px) { .pc-br::before { content: ""; } }
 
-/* ===== スマホ表示専用の余白調整 ===== */
-@media screen and (max-width: 768px) {
-  /* トップ CONTACT の位置を少し上に */
-  h1 {
-    margin-top: 50px !important;
-    margin-bottom: 20px !important;
-  }
-
-  /* ナビの位置を下げる */
-  .main-nav {
-    margin-top: 30px !important;    /* h1 との間隔を広げる */
-    margin-bottom: 50px !important; /* ナビと本文の距離を広げる */
-  }
-}
-
-/* ===== PC・スマホ表示切替 ===== */
+/* ===== PC/スマホ表示切替 ===== */
 .pc-only { display: inline; }
 .sp-only { display: none; }
 @media screen and (max-width: 768px) {
   .pc-only { display: none !important; }
   .sp-only { display: inline !important; }
+
+  /* スマホ表示専用の余白調整 */
+  .contact-title {
+    margin-top:50px;    /* トップ位置を少し上 */
+    margin-bottom:20px; /* ナビとの距離 */
+  }
+  .main-nav {
+    margin-top:35px;    /* トップとの間隔を広げる */
+    margin-bottom:50px; /* 本文との間隔 */
+  }
 }
 
+/* ===== LINEタイトル ===== */
 .line-title{
   margin-top:10px;
   margin-bottom:15px;
-}
-  /* スマホ表示だけ調整 */
-@media screen and (max-width:768px) {
-  .contact-title {
-    margin-top:40px !important;    /* 上に少し移動 */
-    margin-bottom:15px !important; /* ナビとの距離を狭める */
-  }
-  .nav-sp-adjust {
-    margin-top:25px !important;    /* トップからナビまでの距離を広げる */
-    margin-bottom:50px !important; /* ナビと本文の距離を広げる */
-  }
 }
 </style>
 </head>
@@ -118,7 +103,7 @@ h1{
 
 <h1 class="contact-title">CONTACT</h1>
 
-<nav class="main-nav nav-sp-adjust">
+<nav class="main-nav">
   <a href="index.html">HOME</a>
   <a href="menu.html">MENU</a>
   <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" target="_blank">RESERVE</a>
