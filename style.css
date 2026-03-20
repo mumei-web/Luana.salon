@@ -347,3 +347,10 @@ footer {
     display: none; /* divごと非表示にする */
   }
 }
+.schedule-img {
+  text-align: center;
+}
+
+.schedule-img img {
+  max-width: 100%;
+}
