@@ -352,5 +352,8 @@ footer {
 }
 
 .schedule-img img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;  /* ←これが重要 */
+  height: auto;
+  border-radius: 15px;
 }
