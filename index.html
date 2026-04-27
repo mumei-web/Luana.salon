@@ -3,149 +3,372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bright Nail Space</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
+<title>Luana — 濡らすヘッドスパ専門店</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Noto+Serif+JP:wght@200;300&family=Noto+Sans+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+<meta name="google-site-verification" content="O3hoG726tvhX1asal-WGF4yoI_s49Vpb828jJnGC_mg" />
 </head>
-
 <body>
 
-<header>
-<img src="images/interior-latino-hair-salon.jpg" class="hero">
+<div class="cursor" id="cursor"></div>
 
-<h1>
-<span class="sub">【店名】</span><br>
-【店名】
-</h1>
+<!-- SVG Defs (plumeria + palm leaf) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- Plumeria 5-petal flower -->
+    <symbol id="plumeria" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(0,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(72,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(144,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(216,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(288,50,50)"/>
+      <circle cx="50" cy="50" r="8" fill="currentColor" opacity=".6"/>
+    </symbol>
+    <!-- Tropical leaf -->
+    <symbol id="leaf" viewBox="0 0 120 280">
+      <path d="M60,10 C95,60 110,130 60,270 C10,130 25,60 60,10Z" fill="currentColor"/>
+      <path d="M60,10 C60,10 60,270 60,270" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".3"/>
+      <path d="M35,80 C50,75 70,75 85,80" stroke="currentColor" stroke-width="1" fill="none" opacity=".25"/>
+      <path d="M28,120 C45,112 75,112 92,120" stroke="currentColor" stroke-width="1" fill="none" opacity=".2"/>
+      <path d="M26,160 C44,150 76,150 94,160" stroke="currentColor" stroke-width="1" fill="none" opacity=".15"/>
+    </symbol>
+  </defs>
+</svg>
 
-<p>【サブタイトル】</p>
+<!-- ======================== HERO ======================== -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="images/795506401.041044.mp4" type="video/mp4">
+  </video>
+  <div class="hero-veil"></div>
 
-<nav>
-<a href="#about">サロン紹介</a>
-<a href="#menu">メニュー</a>
-<a href="#gallery">ネイルデザイン</a>
-<a href="#staff">スタッフ</a>
-<a href="#info">店舗情報</a>
-<a href="contact.html">お問い合わせ</a>
+  <!-- floating palm leaves -->
+  <div class="hero-leaves">
+    <svg class="leaf-tl" style="top:-40px;left:-55px;width:300px;opacity:.14;fill:#2a5c3e;transform:rotate(-22deg)"><use href="#leaf"/></svg>
+    <svg class="leaf-tr" style="top:-30px;right:-45px;width:240px;opacity:.09;fill:#2a5c3e;transform:rotate(35deg)"><use href="#leaf"/></svg>
+    <svg class="leaf-br" style="bottom:-60px;right:-60px;width:360px;opacity:.13;fill:#2a5c3e;transform:rotate(155deg)"><use href="#leaf"/></svg>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">— 濡らすヘッドスパ専門店 · Niigata —</p>
+    <!-- plumeria SVG above title -->
+    <svg class="hero-plumeria" viewBox="0 0 100 100" style="color:var(--gold-lt)"><use href="#plumeria"/></svg>
+    <h1 class="hero-title">Luana</h1>
+    <p class="hero-tagline">寝てるだけで、若返る。</p>
+    <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" class="hero-cta" target="_blank">
+      <span>ご予約はこちら</span>
+      <svg width="16" height="10" viewBox="0 0 16 10"><line x1="0" y1="5" x2="12" y2="5" stroke="currentColor" stroke-width="1"/><polyline points="9,1 13,5 9,9" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+    </a>
+  </div>
+
+  <div class="hero-badge">
+    <svg viewBox="0 0 100 100" width="100%" height="100%" style="font-size:9.5px">
+      <path id="ct" d="M50,50m-36,0a36,36 0 1,1 72,0a36,36 0 1,1-72,0"/>
+      <text fill="currentColor" letter-spacing="2.6">
+        <textPath href="#ct">HEAD SPA SALON · LUANA · ALOHA · </textPath>
+      </text>
+    </svg>
+    <span class="badge-center">✦</span>
+  </div>
+
+  <div class="hero-scroll"><div class="scroll-bar"></div><span>scroll</span></div>
+</section>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-brand">Luana</a>
+  <div class="nav-links">
+    <a href="#service">Service</a>
+    <a href="menu.html">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#staff">Staff</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" target="_blank" class="nav-btn">Reserve</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span></button>
 </nav>
-</header>
-
-<section id="reservation">
-
-<h2>ご予約</h2>
-
-<a href="reservation.html">
-  <button class="reserve-btn">ご予約はこちら</button>
-</a>
-
-</section>
-
-<section id="about">
-<h2>サロン紹介</h2>
-<p>
-【サロン紹介文】
-</p>
-</section>
-
-<section id="point">
-<h2>当店のこだわり</h2>
-<p>
-【こだわり文】
-</p>
-</section>
-<section id="gallery">
-<h2>ネイルデザイン</h2>
-
-<div class="gallery">
-
-<div class="nail-card"><div class="coming">Coming Soon</div></div>
-<div class="nail-card"><div class="coming">Coming Soon</div></div>
-<div class="nail-card"><div class="coming">Coming Soon</div></div>
-
-<div class="nail-card"><div class="coming">Coming Soon</div></div>
-<div class="nail-card"><div class="coming">Coming Soon</div></div>
-<div class="nail-card"><div class="coming">Coming Soon</div></div>
-
+<div class="mobile-menu" id="mm">
+  <a href="#service" class="mm-link">Service</a>
+  <a href="menu.html" class="mm-link">Menu</a>
+  <a href="#gallery" class="mm-link">Gallery</a>
+  <a href="#staff" class="mm-link">Staff</a>
+  <a href="contact.html" class="mm-link">Contact</a>
+  <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" target="_blank" class="mm-link mm-reserve">Reserve</a>
 </div>
 
+<!-- WAVE DOWN from hero -->
+<div class="wave-divider" style="background:var(--deep)">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" height="70">
+    <path d="M0,35 C240,70 480,0 720,35 C960,70 1200,0 1440,35 L1440,0 L0,0 Z" fill="var(--deep)"/>
+  </svg>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>HEAD SPA SALON LUANA</span><span class="marquee-dot">✦</span>
+    <span>濡らすヘッドスパ専門店</span><span class="marquee-dot">✦</span>
+    <span>ALOHA · PRIVATE SPACE</span><span class="marquee-dot">✦</span>
+    <span>NIIGATA · JAPAN</span><span class="marquee-dot">✦</span>
+    <span>HEAD SPA SALON LUANA</span><span class="marquee-dot">✦</span>
+    <span>濡らすヘッドスパ専門店</span><span class="marquee-dot">✦</span>
+    <span>ALOHA · PRIVATE SPACE</span><span class="marquee-dot">✦</span>
+    <span>NIIGATA · JAPAN</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ======================== SERVICE ======================== -->
+<section class="sec-deep reveal" id="service">
+  <!-- tropical leaf watermark -->
+  <svg style="position:absolute;bottom:-50px;right:-50px;width:300px;opacity:.05;fill:var(--gold);pointer-events:none" viewBox="0 0 120 280"><use href="#leaf"/></svg>
+  <div class="split-layout" style="max-width:1060px;margin:0 auto">
+    <div class="split-text">
+      <span class="tag-line">01 — Service</span>
+      <h2 class="title-serif" style="margin-bottom:20px">Head Spa<br><em>Specialist</em></h2>
+      <div class="gold-bar"></div>
+      <p class="body-prose">
+        ヘッドスパサロン Luanaは<br>
+        "濡らすヘッドスパ専門店"として、<br>
+        頭皮と髪を濡らしながら<br>
+        血行促進と深いリラックス効果を実現します。
+      </p>
+      <ul class="feature-list">
+        <li><span class="fi">✦</span> 頭皮を濡らしながら血行促進</li>
+        <li><span class="fi">✦</span> 深いリラックス効果</li>
+        <li><span class="fi">✦</span> プライベート空間で安心の施術</li>
+      </ul>
+    </div>
+    <div class="split-image">
+      <img src="images/spa3.jpg" alt="service">
+      <div class="img-corner-tl"></div>
+      <div class="img-corner-br"></div>
+    </div>
+  </div>
 </section>
 
-<section id="menu">
-<h2>メニュー</h2>
-
-<div class="menu-item">
-<span class="menu-name">【メニュー】</span>
-<span class="price">¥0,000</span>
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--sand)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,20 C360,60 1080,0 1440,30 L1440,0 L0,0 Z" fill="var(--deep)"/>
+  </svg>
 </div>
 
-<div class="menu-item">
-<span>【メニュー】</span>
-<span class="price">¥0,000</span>
-</div>
-
-<h2>【メニュー】</h2>
-
-<div class="menu-item">
-<span>【メニュー】</span>
-<span class="price">¥0,000</span>
-</div>
-
-<div class="menu-item">
-<span>痛い方必見！【フット】巻き爪ケア≪両親指≫</span>
-<span class="price">¥0,000</span>
-</div>
-
-<h2>【メニュー】</h2>
-
-<div class="menu-item">
-<span>【メニュー】</span>
-<span class="price">¥0,000</span>
-</div>
-
+<!-- ======================== ABOUT ======================== -->
+<section class="sec-sand reveal center" id="about">
+  <!-- leaf watermark -->
+  <svg class="leaf-accent br" viewBox="0 0 120 280" style="fill:var(--palm)"><use href="#leaf"/></svg>
+  <svg class="leaf-accent tl" viewBox="0 0 120 280" style="fill:var(--palm)"><use href="#leaf"/></svg>
+  <div style="max-width:1060px;margin:0 auto">
+    <span class="tag-line">02 — About Luana</span>
+    <h2 class="title-serif" style="margin-bottom:20px">Hawaiian<br><em>Atmosphere</em></h2>
+    <div class="gold-bar"></div>
+    <div class="stag-grid">
+      <div class="stag-img stag-top"><img src="images/spa12.jpg" alt=""></div>
+      <div class="stag-mid">
+        <svg class="stag-plumeria" viewBox="0 0 100 100" style="color:var(--lagoon)"><use href="#plumeria"/></svg>
+        <p class="stag-quote">"音・香り・手技のすべてが、<br>あなたのリラックスを最大化します。"</p>
+      </div>
+      <div class="stag-img stag-btm"><img src="images/spa5.jpg" alt=""></div>
+    </div>
+    <p class="body-prose">
+      ハワイのような落ち着いた雰囲気の空間で<br>
+      日常を忘れてゆったり過ごせる癒しのヘッドスパ。
+    </p>
+  </div>
 </section>
 
-<section id="staff">
-<h2>スタッフ</h2>
-
-<div class="staff-card">
-<img src="images/staff.jpg">
-<h3>スタイリスト</h3>
-<p>【スタイリスト紹介文】</p>
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--ink)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,30 C480,60 960,0 1440,40 L1440,0 L0,0 Z" fill="var(--sand)"/>
+  </svg>
 </div>
 
+<!-- ======================== GALLERY ======================== -->
+<section class="sec-deep reveal center" id="gallery">
+  <div style="max-width:1060px;margin:0 auto">
+    <span class="tag-line">03 — Gallery</span>
+    <h2 class="title-serif" style="margin-bottom:20px">The<br><em>Space</em></h2>
+    <div class="gold-bar"></div>
+    <div class="masonry">
+      <div class="m-item m-tall"><img src="images/spa1.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item"><img src="images/spa2.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item"><img src="images/spa4.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item m-wide"><img src="images/spa7.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item"><img src="images/spa8.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item m-tall"><img src="images/spa10.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item hide-sp"><img src="images/spa17.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item"><img src="images/spa18.jpg" alt=""><div class="m-hover"></div></div>
+      <div class="m-item"><img src="images/spa19.jpg" alt=""><div class="m-hover"></div></div>
+    </div>
+    <p class="body-prose">
+      エッセンシャルオイルの香りで心を癒し、スパで身体をほぐすことで、<br>
+      心と身体の両方を同時にメンテナンスしていきます。
+    </p>
+  </div>
 </section>
 
-<section id="info">
-<h2>店舗情報</h2>
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--sand)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,0 C360,50 1080,10 1440,40 L1440,0 L0,0 Z" fill="var(--deep)"/>
+  </svg>
+</div>
 
-<p>住所： 東京都〇〇区</p>
-<p>営業時間：〇〇:〇〇 </p>
-<p>定休日：日曜日</p>
-<h2>ご予約</h2>
-
-<a href="reservation.html">
-  <button class="reserve-btn">ご予約はこちら</button>
-</a>
+<!-- ======================== INSTAGRAM ======================== -->
+<section class="sec-sand reveal center">
+  <svg class="leaf-accent tr" viewBox="0 0 120 280" style="fill:var(--palm)"><use href="#leaf"/></svg>
+  <svg class="leaf-accent br" viewBox="0 0 120 280" style="fill:var(--palm)"><use href="#leaf"/></svg>
+  <div style="max-width:600px;margin:0 auto">
+    <span class="tag-line" style="color:var(--lagoon)">04 — Follow Us</span>
+    <h2 class="title-serif" style="color:var(--deep);margin-bottom:20px">Instagram</h2>
+    <div class="gold-bar"></div>
+    <p class="body-prose" style="color:var(--text-lt);margin-bottom:22px">日々の施術やサロンの様子をお届けしています</p>
+    <a href="https://www.instagram.com/luana_maiko_shelly/" target="_blank" class="insta-btn">
+      <i class="fa-brands fa-instagram"></i>
+      <span>@luana_maiko_shelly</span>
+    </a>
+  </div>
 </section>
 
-<section id="map">
-<h2>アクセス</h2>
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--lagoon)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,40 C480,10 960,60 1440,20 L1440,0 L0,0 Z" fill="var(--sand)"/>
+  </svg>
+</div>
 
-<iframe 
-src=" "
-height="300"
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
+<!-- ======================== SCHEDULE ======================== -->
+<section class="sec-lagoon reveal center">
+  <div style="max-width:700px;margin:0 auto">
+    <span class="tag-line">05 — Schedule</span>
+    <h2 class="title-serif" style="margin-bottom:20px">営業<em>カレンダー</em></h2>
+    <div class="gold-bar"></div>
+    <div class="schedule-img"><img src="images/spa20.jpg" alt="schedule"></div>
+  </div>
 </section>
 
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--deep)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,20 C360,60 1080,0 1440,35 L1440,0 L0,0 Z" fill="var(--lagoon)"/>
+  </svg>
+</div>
+
+<!-- ======================== STAFF ======================== -->
+<section class="sec-deep reveal" id="staff">
+  <svg style="position:absolute;top:-30px;left:-40px;width:260px;opacity:.06;fill:var(--gold);pointer-events:none;transform:rotate(-15deg)" viewBox="0 0 120 280"><use href="#leaf"/></svg>
+  <div class="staff-layout">
+    <div class="staff-img-side">
+      <svg class="staff-plumeria" viewBox="0 0 100 100" style="color:var(--gold)"><use href="#plumeria"/></svg>
+      <div class="staff-photo"><img src="images/spa11.jpg" alt="SHELLY"></div>
+      <p class="staff-cert">Mouton Whip 認定講師<br><small>新潟校</small></p>
+    </div>
+    <div class="staff-text-side">
+      <span class="tag-line">06 — Staff</span>
+      <h2 class="staff-name">Shelly</h2>
+      <div class="gold-bar"></div>
+      <p class="body-prose">
+        お客様の日頃の疲れを最大限に癒し、<br>
+        自分へのご褒美になる施術を提供できるよう<br>
+        日々心掛けています。<br><br>
+        一人ひとりの頭皮・髪質・その日のコンディションに<br>
+        合わせた丁寧な施術をお約束します。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE into sunset -->
+<div class="wave-divider" style="background:var(--sunset)">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" height="70">
+    <path d="M0,35 C240,70 720,0 1440,40 L1440,0 L0,0 Z" fill="var(--deep)"/>
+  </svg>
+</div>
+
+<!-- ======================== RESERVE CTA ======================== -->
+<section class="sec-sunset reveal" id="reserve">
+  <!-- plumeria watermarks -->
+  <svg style="position:absolute;top:30px;left:48px;width:90px;opacity:.2;color:white" viewBox="0 0 100 100"><use href="#plumeria"/></svg>
+  <svg style="position:absolute;bottom:30px;right:60px;width:70px;opacity:.15;color:white" viewBox="0 0 100 100"><use href="#plumeria"/></svg>
+  <div class="cta-inner">
+    <span class="tag-line">07 — Reserve</span>
+    <h2 class="cta-title">あなただけの<br><em>特別な時間を。</em></h2>
+    <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" class="cta-btn" target="_blank">
+      <span>今すぐ予約する</span>
+      <svg width="18" height="10" viewBox="0 0 18 10"><line x1="0" y1="5" x2="14" y2="5" stroke="currentColor" stroke-width="1"/><polyline points="11,1 15,5 11,9" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+    </a>
+    <p class="cta-note">オンラインにて24時間受付中</p>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--sand)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,0 C480,60 960,0 1440,40 L1440,0 L0,0 Z" fill="var(--sunset)"/>
+  </svg>
+</div>
+
+<!-- ======================== ACCESS ======================== -->
+<section class="sec-sand reveal center" id="access">
+  <svg class="leaf-accent tl" viewBox="0 0 120 280" style="fill:var(--palm)"><use href="#leaf"/></svg>
+  <div style="max-width:1060px;margin:0 auto">
+    <span class="tag-line" style="color:var(--lagoon)">08 — Access</span>
+    <h2 class="title-serif" style="color:var(--deep);margin-bottom:20px">Salon<br><em>Information</em></h2>
+    <div class="gold-bar"></div>
+    <div class="access-grid">
+      <div class="access-info">
+        <div class="access-row">
+          <span class="access-label">住所</span>
+          <span class="access-val">〒950-0861<br>新潟県新潟市東区中山8丁目4-16 1F</span>
+        </div>
+        <div class="access-row">
+          <span class="access-label">TEL</span>
+          <span class="access-val">025-290-7990</span>
+        </div>
+        <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" class="access-link" target="_blank">ご予約はこちら →</a>
+      </div>
+      <div class="access-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.7233417652424!2d139.0874111!3d37.9135288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff4cbd491cc6c4f%3A0x5db7b37e631eb9e1!2z44CSOTUwLTA4NjEg5paw5r2f55yM5paw5r2f5biC5p2x5Yy65Lit5bGx77yY5LiB55uu77yU4oiS77yR77yWIDFm!5e0!3m2!1sja!2sjp!4v1773441882358!5m2!1sja!2sjp" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-<p>© 【店名】</p>
+  <div class="footer-top">
+    <svg class="footer-plumeria" viewBox="0 0 100 100" style="color:var(--gold)"><use href="#plumeria"/></svg>
+    <div class="footer-logo">Luana</div>
+    <p class="footer-sub">濡らすヘッドスパ専門店 — Niigata</p>
+    <nav class="footer-links">
+      <a href="#service">Service</a><a href="menu.html">Menu</a>
+      <a href="#gallery">Gallery</a><a href="#staff">Staff</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="https://www.instagram.com/luana_maiko_shelly/" target="_blank" class="footer-insta">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+  <div class="footer-bottom">© Luana Head Spa Salon. All rights reserved.</div>
 </footer>
 
+<script>
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => { cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter',()=>cursor.classList.add('grow'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('grow'));
+});
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{ nav.classList.toggle('solid',window.scrollY>80); });
+const hbg = document.getElementById('hamburger');
+const mm  = document.getElementById('mm');
+hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); mm.classList.toggle('open'); });
+document.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); mm.classList.remove('open'); }));
+const io = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } }); },{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
