@@ -2,42 +2,241 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>お問い合わせ | Salon Luna</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Luana</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@200;300&family=Noto+Sans+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lagoon:#0a7a7a; --lagoon-lt:#12a3a3; --deep:#083a3a;
+  --sunset:#d9714e; --sand:#f4e8d4; --palm:#2a5c3e;
+  --gold:#c9a058; --gold-lt:#e8d0a0; --cream:#fdf7ee;
+  --white:#ffffff; --ink:#0d2828; --text:#2e1e14; --text-lt:#6b5040;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;font-weight:300;background:var(--sand);color:var(--text);overflow-x:hidden;min-height:100vh;}
 
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 52px;
+  background:rgba(8,58,58,.96);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(201,160,88,.15);position:sticky;top:0;z-index:50;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;font-weight:300;color:var(--white);text-decoration:none;letter-spacing:.1em;}
+.nav-logo:hover{color:var(--gold-lt);}
+.nav-right{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.nav-right a{text-decoration:none;padding:8px 16px;color:rgba(255,255,255,.55);font-size:12px;letter-spacing:.15em;text-transform:uppercase;transition:color .25s;}
+.nav-right a:hover{color:var(--white);}
+.nav-right a.active{color:var(--gold);}
+.nav-right a.rsv{border:1px solid rgba(201,160,88,.5);color:var(--gold-lt);margin-left:8px;}
+.nav-right a.rsv:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+
+/* PAGE HERO */
+.page-hero{
+  background:linear-gradient(160deg, var(--lagoon) 0%, #0d6060 50%, var(--deep) 100%);
+  padding:96px 24px 80px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+/* tropical leaf SVG watermarks */
+.page-hero::before,.page-hero::after{
+  content:'';position:absolute;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 280'%3E%3Cpath d='M60,10 C95,60 110,130 60,270 C10,130 25,60 60,10Z' fill='%232a5c3e'/%3E%3C/svg%3E") no-repeat;
+  background-size:contain;
+}
+.page-hero::before{width:320px;height:420px;top:-70px;left:-70px;transform:rotate(-22deg);opacity:.14;}
+.page-hero::after {width:260px;height:340px;bottom:-60px;right:-60px;transform:rotate(155deg);opacity:.12;}
+/* wave bottom */
+.page-hero-wave{position:absolute;bottom:0;left:0;right:0;line-height:0;}
+.page-hero-wave svg{display:block;width:100%;}
+
+.hero-plumeria{width:52px;margin:0 auto 18px;opacity:.75;}
+.page-hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(54px,10vw,88px);
+  font-weight:300;font-style:italic;
+  color:var(--white);letter-spacing:.15em;line-height:1;margin-bottom:14px;
+}
+.page-hero p{font-size:11px;letter-spacing:.4em;color:var(--gold-lt);text-transform:uppercase;}
+.hero-rule{width:44px;height:1px;background:var(--gold);margin:18px auto 0;}
+
+/* MAIN CONTENT */
+.contact-main{
+  max-width:700px;margin:0 auto;padding:80px 28px 100px;
+}
+
+/* CARD */
+.contact-card{
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(14px);
+  border-radius:6px;
+  border:1px solid rgba(201,160,88,.2);
+  box-shadow:0 16px 50px rgba(8,58,58,.1);
+  padding:56px 52px;
+  text-align:center;
+  position:relative;overflow:hidden;
+  animation:fadeUp .9s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+/* subtle leaf in card corner */
+.card-leaf{
+  position:absolute;bottom:-40px;right:-40px;
+  width:200px;opacity:.06;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 280'%3E%3Cpath d='M60,10 C95,60 110,130 60,270 C10,130 25,60 60,10Z' fill='%230a7a7a'/%3E%3C/svg%3E") no-repeat;
+  background-size:contain;height:260px;
+  transform:rotate(140deg);
+}
+
+.card-plumeria{width:44px;margin:0 auto 20px;opacity:.55;}
+
+.card-tag{
+  font-size:11px;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--lagoon);margin-bottom:14px;display:block;
+}
+.card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,5vw,42px);
+  font-weight:300;line-height:1.1;
+  color:var(--deep);margin-bottom:16px;
+}
+.card-title em{font-style:italic;color:var(--lagoon);}
+.card-rule{width:40px;height:1px;background:var(--gold);margin:0 auto 28px;}
+
+.card-body{
+  font-size:15px;font-weight:300;line-height:2.3;
+  color:var(--text-lt);margin-bottom:40px;
+}
+
+/* LINE button */
+.line-btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:17px 46px;
+  background:#06C755;color:var(--white);
+  text-decoration:none;border-radius:4px;
+  font-size:15px;font-weight:400;letter-spacing:.1em;
+  box-shadow:0 8px 28px rgba(6,199,85,.3);
+  transition:transform .3s,box-shadow .3s;
+}
+.line-btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(6,199,85,.38);}
+.line-btn svg{width:24px;height:24px;flex-shrink:0;}
+
+.card-note{
+  margin-top:20px;font-size:12px;
+  letter-spacing:.1em;color:var(--text-lt);opacity:.7;
+}
+
+/* divider */
+.card-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:36px 0;color:rgba(201,160,88,.4);
+  font-size:12px;letter-spacing:.2em;
+}
+.card-divider::before,.card-divider::after{
+  content:'';flex:1;height:1px;background:rgba(201,160,88,.2);
+}
+
+/* access mini */
+.access-mini{
+  display:flex;flex-direction:column;gap:12px;
+  text-align:left;background:rgba(8,58,58,.04);
+  border-radius:4px;padding:24px 28px;
+  border:1px solid rgba(10,122,122,.1);
+}
+.access-row{display:flex;align-items:flex-start;gap:12px;}
+.access-icon{color:var(--lagoon);font-size:14px;flex-shrink:0;margin-top:2px;}
+.access-val{font-size:13px;color:var(--text-lt);line-height:1.9;font-weight:300;}
+
+/* WAVE BG element below card */
+.wave-bg{display:block;width:100%;overflow:hidden;line-height:0;margin-top:60px;}
+.wave-bg svg{display:block;width:100%;}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  nav{padding:18px 20px;}
+  .nav-right a{font-size:11px;padding:7px 10px;}
+  .contact-card{padding:36px 24px;}
+  .contact-main{padding:52px 16px 80px;}
+  .page-hero{padding:76px 20px 70px;}
+}
+</style>
+</head>
 <body>
 
-<header>
-<h1>お問い合わせ</h1>
+<!-- Plumeria symbol -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="plu" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(0,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(72,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(144,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(216,50,50)"/>
+      <ellipse cx="50" cy="22" rx="11" ry="26" fill="currentColor" transform="rotate(288,50,50)"/>
+      <circle cx="50" cy="50" r="8" fill="currentColor" opacity=".6"/>
+    </symbol>
+  </defs>
+</svg>
+
 <nav>
-<a href="index.html">ホーム</a>
-<a href="index.html">メニュー</a>
-<a href="index.html">スタイル</a>
-<a href="contact.html">お問い合わせ</a>
+  <a href="index.html" class="nav-logo">Luana</a>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" target="_blank" class="rsv">Reserve</a>
+  </div>
 </nav>
-</header>
 
-<section class="contact">
+<div class="page-hero">
+  <svg class="hero-plumeria" viewBox="0 0 100 100" style="color:var(--gold-lt)"><use href="#plu"/></svg>
+  <h1>Contact</h1>
+  <p>お問い合わせ</p>
+  <div class="hero-rule"></div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+      <path d="M0,30 C360,60 1080,0 1440,35 L1440,60 L0,60 Z" fill="var(--sand)"/>
+    </svg>
+  </div>
+</div>
 
-<h2>お問い合わせフォーム</h2>
+<div class="contact-main">
 
-<form>
+  <div class="contact-card">
+    <div class="card-leaf"></div>
 
-<label>お名前</label>
-<input type="text" name="name" required>
+    <svg class="card-plumeria" viewBox="0 0 100 100" style="color:var(--lagoon)"><use href="#plu"/></svg>
+    <span class="card-tag">— LINE でお気軽に —</span>
+    <h2 class="card-title">公式LINEで<br><em>ご相談ください</em></h2>
+    <div class="card-rule"></div>
 
-<label>メールアドレス</label>
-<input type="email" name="email" required>
+    <p class="card-body">
+      ご予約のご相談・空き状況の確認は<br>
+      公式LINEからお問い合わせください。<br><br>
+      初めての方もお気軽にご連絡ください。<br>
+      <strong style="font-weight:400;color:var(--lagoon)">"ホームページを見ました"</strong><br>
+      と送っていただくだけで大丈夫です。
+    </p>
 
-<label>お問い合わせ内容</label>
-<textarea name="message" rows="5"></textarea>
+    <a href="https://lin.ee/OgkEGmP" target="_blank" class="line-btn">
+      <!-- LINE official icon -->
+      <svg viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      <span>LINEでお問い合わせする</span>
+    </a>
+    <p class="card-note">友だち追加後、メッセージをお送りください</p>
 
-<button type="submit">送信</button>
+    <div class="card-divider">ACCESS</div>
 
-</form>
+    <div class="access-mini">
+      <div class="access-row">
+        <span class="access-icon">📍</span>
+        <span class="access-val">〒950-0861 新潟県新潟市東区中山8丁目4-16 1F</span>
+      </div>
+      <div class="access-row">
+        <span class="access-icon">📞</span>
+        <span class="access-val">025-290-7990</span>
+      </div>
+    </div>
+  </div>
 
-</section>
+</div>
 
 </body>
 </html>
