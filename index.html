@@ -389,6 +389,38 @@ hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); mm.classList.to
 document.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); mm.classList.remove('open'); }));
 const io = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } }); },{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+ // Gallery Carousel
+const track = document.getElementById('gTrack');
+const items = track.querySelectorAll('.c-item');
+const dotsWrap = document.getElementById('gDots');
+const STEP = 312; // カード幅 + gap
+
+// ドット生成
+items.forEach((_,i)=>{
+  const d = document.createElement('span');
+  if(i===0) d.classList.add('active');
+  d.addEventListener('click',()=>{ track.scrollTo({left:i*STEP,behavior:'smooth'}); });
+  dotsWrap.appendChild(d);
+});
+const dots = dotsWrap.querySelectorAll('span');
+
+// アクティブドット更新
+track.addEventListener('scroll',()=>{
+  const idx = Math.round(track.scrollLeft / STEP);
+  dots.forEach((d,i)=> d.classList.toggle('active', i===idx));
+  document.getElementById('gPrev').disabled = track.scrollLeft < 10;
+  document.getElementById('gNext').disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 10;
+}, {passive:true});
+
+document.getElementById('gPrev').addEventListener('click',()=>{ track.scrollBy({left:-STEP,behavior:'smooth'}); });
+document.getElementById('gNext').addEventListener('click',()=>{ track.scrollBy({left: STEP,behavior:'smooth'}); });
+
+// マウスドラッグ対応
+let drag={active:false,startX:0,scrollLeft:0};
+track.addEventListener('mousedown', e=>{ drag={active:true,startX:e.pageX-track.offsetLeft,scrollLeft:track.scrollLeft}; track.classList.add('is-dragging'); });
+document.addEventListener('mouseup',  ()=>{ drag.active=false; track.classList.remove('is-dragging'); });
+track.addEventListener('mousemove', e=>{ if(!drag.active) return; e.preventDefault(); track.scrollLeft = drag.scrollLeft-(e.pageX-track.offsetLeft-drag.startX)*1.5; }); 
 </script>
 </body>
 </html>
