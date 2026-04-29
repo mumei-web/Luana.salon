@@ -437,29 +437,42 @@ footer { background: var(--deep); border-top: 1px solid rgba(201,160,88,.12); }
 }
 
 
-/* ぐるぐる回るバッジの中央部分のスタイル */
-.badge-center {
-  display: flex; /* 写真を中央に寄せるため */
-  justify-content: center;
-  align-items: center;
-  position: absolute; /* 親要素 .hero-badge に対して絶対配置 */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 完全に中央へ */
-  width: 50px; /* バッジのサイズに合わせて調整 */
-  height: 50px; /* 幅と同じにして正方形にする */
-  
-  /* --- ここからが丸くくり抜く魔法のCSS --- */
-  border-radius: 50%; /* 完全に丸くする */
-  overflow: hidden; /* 丸からはみ出た部分（四角いカド）を隠す */
-  /* -------------------------------------- */
-
-  border: 1px solid var(--gold-lt); /* お好みでゴールドの枠線を付けると高級感が出ます */
+/* 1. ぐるぐる回る外枠：背景色を透明にします */
+.hero-badge {
+  position: absolute;
+  bottom: 56px;
+  right: 48px;
+  width: 96px;
+  height: 96px;
+  z-index: 3;
+  color: rgba(255,255,255,0.42); /* 周りの文字の色 */
+  background: transparent; /* ★背景を透明に修正 */
+  animation: spinBadge 20s linear infinite, fadeUp 1.3s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* その中にある画像（写真）のスタイル */
+/* 2. 中央の画像：枠を整えて、画像を丸くくり抜きます */
+.badge-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 逆回転させてロゴが逆さまにならないようにする設定 */
+  transform: translate(-50%, -50%) rotate(0deg); 
+  width: 54px;  /* ロゴの表示サイズ。お好みで調整 */
+  height: 54px;
+  border-radius: 50%; /* ★ここを50%にすることで円形になります */
+  overflow: hidden;   /* ★これで四角い画像の角を隠します */
+  border: 1px solid var(--gold-lt); /* ロゴの周りに細い金枠 */
+  background-color: white; /* ロゴの背景を白くして、ロゴを見やすくします */
+  animation: spinRev 20s linear infinite; /* 外枠と逆回転させてロゴを正面に保つ */
+}
+
+/* 3. 中のロゴ画像：隙間なく収める設定 */
 .badge-center img {
-  width: 100%; /* 親要素（丸）の幅に合わせる */
-  height: 100%; /* 親要素（丸）の高さに合わせる */
-  object-fit: cover; /* 画像を歪ませずに、丸全体を埋めるようにトリミング */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ★ロゴが欠けないように枠内に収める設定 */
+  display: block;
 }
