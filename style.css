@@ -435,3 +435,31 @@ footer { background: var(--deep); border-top: 1px solid rgba(201,160,88,.12); }
   .c-item { flex: 0 0 240px; height: 210px; }
   .c-item.c-tall { flex: 0 0 240px; height: 210px; }
 }
+
+
+/* ぐるぐる回るバッジの中央部分のスタイル */
+.badge-center {
+  display: flex; /* 写真を中央に寄せるため */
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* 親要素 .hero-badge に対して絶対配置 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 完全に中央へ */
+  width: 50px; /* バッジのサイズに合わせて調整 */
+  height: 50px; /* 幅と同じにして正方形にする */
+  
+  /* --- ここからが丸くくり抜く魔法のCSS --- */
+  border-radius: 50%; /* 完全に丸くする */
+  overflow: hidden; /* 丸からはみ出た部分（四角いカド）を隠す */
+  /* -------------------------------------- */
+
+  border: 1px solid var(--gold-lt); /* お好みでゴールドの枠線を付けると高級感が出ます */
+}
+
+/* その中にある画像（写真）のスタイル */
+.badge-center img {
+  width: 100%; /* 親要素（丸）の幅に合わせる */
+  height: 100%; /* 親要素（丸）の高さに合わせる */
+  object-fit: cover; /* 画像を歪ませずに、丸全体を埋めるようにトリミング */
+}
