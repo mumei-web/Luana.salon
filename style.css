@@ -117,15 +117,43 @@ body {
   animation: fadeUp 1.3s .58s cubic-bezier(.22,1,.36,1) both;
 }
 .hero-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+/* ============================================  HERO BADGE (FIXED)  */
 .hero-badge {
-  position: absolute; bottom: 56px; right: 48px;
-  width: 96px; height: 96px; z-index: 3;
-  color: rgba(255,255,255,.42);
-  animation: spinBadge 20s linear infinite, fadeUp 1.3s .8s cubic-bezier(.22,1,.36,1) both;
+  position: absolute;
+  bottom: 56px;
+  right: 48px;
+  width: 96px;
+  height: 96px;
+  z-index: 3;
+  color: rgba(255,255,255,0.42);
+  background: transparent;
+  animation: spinBadge 20s linear infinite, fadeUp 1.3s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
 .badge-center {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-size: 18px; color: var(--gold-lt); animation: spinRev 20s linear infinite;
+  position: absolute;
+  /* 親要素(96px)の真ん中に配置 */
+  top: 50%;
+  left: 50%;
+  /* ズレを補正しつつ、逆回転させる */
+  transform: translate(-50%, -50%);
+  width: 56px;  /* 丸い白枠のサイズ */
+  height: 56px;
+  border-radius: 50%; /* 正円にする */
+  overflow: hidden;   /* ロゴの角を隠す */
+  background-color: white; 
+  border: 1px solid var(--gold-lt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spinRev 20s linear infinite;
+}
+
+.badge-center img {
+  width: 80%;  /* 白枠の中でロゴが少し小さく収まるように調整 */
+  height: 80%;
+  object-fit: contain;
+  display: block;
 }
 @keyframes spinBadge  { to { transform: rotate(360deg);  } }
 @keyframes spinRev    { to { transform: rotate(-360deg); } }
