@@ -118,6 +118,7 @@ body {
 }
 .hero-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 /* ============================================  HERO BADGE (FIXED)  */
+/* ============================================  HERO BADGE (FIXED)  */
 .hero-badge {
   position: absolute;
   bottom: 56px;
@@ -127,36 +128,50 @@ body {
   z-index: 3;
   color: rgba(255,255,255,0.42);
   background: transparent;
+  /* 文字だけを回転させる */
   animation: spinBadge 20s linear infinite, fadeUp 1.3s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .badge-center {
+  /* 親の回転の影響を受けないように配置 */
   position: absolute;
-  /* 親要素(96px)の真ん中に配置 */
   top: 50%;
   left: 50%;
-  /* ズレを補正しつつ、逆回転させる */
+  /* translate(-50%, -50%) で正確な中心に固定 */
+  /* ここに逆回転(spinRev)をかけることで、親の回転を打ち消して正面を向かせます */
   transform: translate(-50%, -50%);
-  width: 56px;  /* 丸い白枠のサイズ */
+  width: 56px;
   height: 56px;
-  border-radius: 50%; /* 正円にする */
-  overflow: hidden;   /* ロゴの角を隠す */
+  border-radius: 50%;
+  overflow: hidden;
   background-color: white; 
   border: 1px solid var(--gold-lt);
   display: flex;
   align-items: center;
   justify-content: center;
+  /* 逆回転のアニメーション */
   animation: spinRev 20s linear infinite;
 }
 
 .badge-center img {
-  width: 80%;  /* 白枠の中でロゴが少し小さく収まるように調整 */
+  width: 80%; /* 余白を持たせてロゴを綺麗に見せる */
   height: 80%;
   object-fit: contain;
   display: block;
 }
-@keyframes spinBadge  { to { transform: rotate(360deg);  } }
-@keyframes spinRev    { to { transform: rotate(-360deg); } }
+
+/* アニメーション定義：ここがポイント */
+@keyframes spinBadge {
+  /* 親は真ん中(translate)を維持したまま回る */
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spinRev {
+  /* 子は真ん中(translate)に固定したまま、親と逆方向に回って打ち消す */
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
 .hero-scroll {
   position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
   z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 10px;
@@ -464,43 +479,3 @@ footer { background: var(--deep); border-top: 1px solid rgba(201,160,88,.12); }
   .c-item.c-tall { flex: 0 0 240px; height: 210px; }
 }
 
-
-/* 1. ぐるぐる回る外枠：背景色を透明にします */
-.hero-badge {
-  position: absolute;
-  bottom: 56px;
-  right: 48px;
-  width: 96px;
-  height: 96px;
-  z-index: 3;
-  color: rgba(255,255,255,0.42); /* 周りの文字の色 */
-  background: transparent; /* ★背景を透明に修正 */
-  animation: spinBadge 20s linear infinite, fadeUp 1.3s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-/* 2. 中央の画像：枠を整えて、画像を丸くくり抜きます */
-.badge-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* 逆回転させてロゴが逆さまにならないようにする設定 */
-  transform: translate(-50%, -50%) rotate(0deg); 
-  width: 54px;  /* ロゴの表示サイズ。お好みで調整 */
-  height: 54px;
-  border-radius: 50%; /* ★ここを50%にすることで円形になります */
-  overflow: hidden;   /* ★これで四角い画像の角を隠します */
-  border: 1px solid var(--gold-lt); /* ロゴの周りに細い金枠 */
-  background-color: white; /* ロゴの背景を白くして、ロゴを見やすくします */
-  animation: spinRev 20s linear infinite; /* 外枠と逆回転させてロゴを正面に保つ */
-}
-
-/* 3. 中のロゴ画像：隙間なく収める設定 */
-.badge-center img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* ★ロゴが欠けないように枠内に収める設定 */
-  display: block;
-}
